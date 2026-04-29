@@ -310,6 +310,30 @@
       text-align: center;
     }
 
+    .entity-list {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 7px;
+      margin-top: 10px;
+    }
+
+    .entity-toggle {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      min-height: 28px;
+      color: #324255;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .entity-toggle input {
+      width: 16px;
+      height: 16px;
+      flex: 0 0 auto;
+      margin: 0;
+    }
+
     @media (max-width: 980px) {
       .topbar,
       .layout,
@@ -399,6 +423,11 @@
           <h2>Game Entities</h2>
           <p id="gameDetails"></p>
           <div id="gameChips"></div>
+        </div>
+        <div class="game-card">
+          <h2>Entity Override</h2>
+          <p>Checked entities are treated as available for conversion.</p>
+          <div id="entityControls" class="entity-list"></div>
         </div>
       </aside>
     </section>
@@ -740,8 +769,23 @@
     const state = {
       rows: [],
       changedOnly: false,
-      pricedOnly: false
+      pricedOnly: false,
+      entitySelections: {}
     };
+
+    const ENTITY_KEYS = [
+      "hard",
+      "soft",
+      "lives",
+      "unlimited_lives",
+      "stickers",
+      "cheap",
+      "medium",
+      "expensive",
+      "before_cheap",
+      "before_medium",
+      "before_expensive"
+    ];
 
     function resolveProfiles() {
       const byId = Object.fromEntries(GAMES.map((game) => [game.id, game]));
@@ -957,10 +1001,10 @@
       return Array.from(map.values());
     }
 
-    function resolveBooster(key, game) {
+    function resolveBooster(key, game, selection) {
       const chain = BOOSTER_CHAINS[key] || [key];
       for (const tier of chain) {
-        if (game.boosters[tier]) {
+        if (selection[tier] && game.boosters[tier]) {
           return {
             tier,
             name: game.boosters[tier],
@@ -972,13 +1016,13 @@
       return null;
     }
 
-    function convertReward(parsed, game) {
+    function convertReward(parsed, game, selection) {
       const converted = [];
       const notes = [];
 
       parsed.items.forEach((item) => {
         if (item.type === "booster") {
-          const resolved = resolveBooster(item.key, game);
+          const resolved = resolveBooster(item.key, game, selection);
           if (resolved) {
             converted.push({
               type: "booster",
@@ -1003,8 +1047,28 @@
           return;
         }
 
-        if (item.type === "stickers" && !game.stickers) {
+        if (item.type === "stickers" && !selection.stickers) {
           notes.push("stickers unavailable");
+          return;
+        }
+
+        if (item.type === "soft" && !selection.soft) {
+          notes.push("soft unavailable");
+          return;
+        }
+
+        if (item.type === "lives" && !selection.lives) {
+          notes.push("lives unavailable");
+          return;
+        }
+
+        if (item.type === "unlimited_lives" && !selection.unlimited_lives) {
+          notes.push("unlimited lives unavailable");
+          return;
+        }
+
+        if (item.type === "hard" && !selection.hard) {
+          notes.push("hard unavailable");
           return;
         }
 
@@ -1119,24 +1183,68 @@
       return GAMES.find((game) => game.id === document.getElementById("gameSelect").value) || GAMES[0];
     }
 
+    function defaultEntitySelection(game) {
+      const selected = {};
+      ENTITY_KEYS.forEach((key) => {
+        selected[key] = false;
+      });
+
+      (game.currencies || []).forEach((currency) => {
+        if (currency === "energy") {
+          selected.lives = true;
+          selected.unlimited_lives = true;
+        }
+        if (selected[currency] !== undefined) {
+          selected[currency] = true;
+        }
+      });
+
+      if ((game.currencies || []).includes("lives")) {
+        selected.unlimited_lives = true;
+      }
+
+      selected.stickers = Boolean(game.stickers);
+      Object.keys(game.boosters || {}).forEach((tier) => {
+        selected[tier] = true;
+      });
+
+      selected.hard = true;
+      return selected;
+    }
+
+    function getEntitySelection(game) {
+      if (!state.entitySelections[game.id]) {
+        state.entitySelections[game.id] = defaultEntitySelection(game);
+      }
+      return state.entitySelections[game.id];
+    }
+
     function renderGame(game) {
+      const selection = getEntitySelection(game);
       const tiers = Object.entries(game.boosters || {});
       document.getElementById("gameSummary").textContent = game.label;
       document.getElementById("gameDetails").textContent = `${game.group}. Currencies: ${game.currencies.join(", ")}. Stickers: ${game.stickers ? "yes" : "no"}.`;
       document.getElementById("gameChips").innerHTML = tiers.length
         ? tiers.map(([tier, name]) => `<span class="chip">${tier}: ${name}</span>`).join("")
         : `<span class="chip warn">no boosters</span>`;
+      document.getElementById("entityControls").innerHTML = ENTITY_KEYS.map((key) => `
+        <label class="entity-toggle">
+          <input type="checkbox" data-entity="${key}" ${selection[key] ? "checked" : ""}>
+          <span>${key}</span>
+        </label>
+      `).join("");
     }
 
     function render() {
       const game = getSelectedGame();
+      const selection = getEntitySelection(game);
       const query = document.getElementById("searchInput").value.trim().toLowerCase();
       const body = document.getElementById("rewardBody");
       const rows = [];
       let changedCount = 0;
 
       state.rows.forEach((row) => {
-        const converted = convertReward(row.parsed, game);
+        const converted = convertReward(row.parsed, game, selection);
         const convertedPrice = rewardValue(converted.items);
         const changed = !rewardsEqual(row.commonItems, converted.items) || converted.notes.length > 0;
 
@@ -1191,6 +1299,15 @@
 
       document.getElementById("gameSelect").addEventListener("change", render);
       document.getElementById("searchInput").addEventListener("input", render);
+      document.getElementById("entityControls").addEventListener("change", (event) => {
+        if (!event.target.matches("[data-entity]")) {
+          return;
+        }
+        const game = getSelectedGame();
+        const selection = getEntitySelection(game);
+        selection[event.target.dataset.entity] = event.target.checked;
+        render();
+      });
       document.getElementById("changedOnly").addEventListener("click", (event) => {
         state.changedOnly = !state.changedOnly;
         event.currentTarget.classList.toggle("active", state.changedOnly);
