@@ -382,6 +382,7 @@
                 <th class="price">Common $</th>
                 <th>Converted Reward</th>
                 <th class="price">Game $</th>
+                <th class="price">Product $</th>
                 <th>Notes</th>
               </tr>
             </thead>
@@ -758,6 +759,21 @@
       return `$${value.toFixed(2)}`;
     }
 
+    function formatProductPrice(value) {
+      const text = String(value || "").trim();
+      if (!text) {
+        return "";
+      }
+
+      const match = text.match(/(\d+(?:[.,]\d+)?)/);
+      if (!match) {
+        return text;
+      }
+
+      const amount = Number(match[1].replace(",", "."));
+      return Number.isFinite(amount) ? formatUsd(amount) : text;
+    }
+
     function parseCsv(text) {
       const rows = [];
       let row = [];
@@ -1040,6 +1056,7 @@
           id: row[1] || "",
           common: row[10] || "",
           condition: row[11] || "",
+          productPrice: row[13] || "",
           comment: row[14] || ""
         }))
         .filter((row) => row.name && row.id && row.common && !/^(N\/A|-|0)$/i.test(row.common.trim()))
@@ -1140,6 +1157,7 @@
             <td class="price">${formatUsd(row.commonPrice)}</td>
             <td class="converted">${escapeHtml(converted.items.map((item) => pricedDisplay(item, itemToDisplay)).join("\n"))}</td>
             <td class="price${priceDeltaClass(row.commonPrice, convertedPrice)}">${formatUsd(convertedPrice)}</td>
+            <td class="price">${escapeHtml(formatProductPrice(row.productPrice))}</td>
             <td class="notes">${notes.join("")}</td>
           </tr>
         `);
