@@ -427,6 +427,7 @@
         <div class="game-card">
           <h2>Entity Override</h2>
           <p>Checked entities are treated as available for conversion.</p>
+          <button id="applyEntities" type="button">Apply</button>
           <div id="entityControls" class="entity-list"></div>
         </div>
       </aside>
@@ -1004,10 +1005,10 @@
     function resolveBooster(key, game, selection) {
       const chain = BOOSTER_CHAINS[key] || [key];
       for (const tier of chain) {
-        if (selection[tier] && game.boosters[tier]) {
+        if (selection[tier]) {
           return {
             tier,
-            name: game.boosters[tier],
+            name: game.boosters[tier] || tier,
             fallback: tier !== key,
             chain
           };
@@ -1306,6 +1307,14 @@
         const game = getSelectedGame();
         const selection = getEntitySelection(game);
         selection[event.target.dataset.entity] = event.target.checked;
+        render();
+      });
+      document.getElementById("applyEntities").addEventListener("click", () => {
+        const game = getSelectedGame();
+        const selection = getEntitySelection(game);
+        document.querySelectorAll("#entityControls [data-entity]").forEach((input) => {
+          selection[input.dataset.entity] = input.checked;
+        });
         render();
       });
       document.getElementById("changedOnly").addEventListener("click", (event) => {
