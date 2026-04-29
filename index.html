@@ -1,0 +1,1200 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SoftConversion Rewards</title>
+  <style>
+    :root {
+      --bg: #f6f7f9;
+      --panel: #ffffff;
+      --ink: #17202a;
+      --muted: #647283;
+      --line: #dfe5ec;
+      --accent: #176b87;
+      --accent-2: #227c4d;
+      --warn: #a45b12;
+      --bad: #9d2c2c;
+      --chip: #eef4f6;
+      --shadow: 0 10px 28px rgba(30, 42, 54, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-width: 320px;
+      background: var(--bg);
+      color: var(--ink);
+      font: 14px/1.45 Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    header {
+      background: var(--panel);
+      border-bottom: 1px solid var(--line);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .shell {
+      width: min(1520px, calc(100vw - 32px));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      min-height: 72px;
+      display: grid;
+      grid-template-columns: minmax(220px, 1fr) auto auto;
+      gap: 16px;
+      align-items: center;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 22px;
+      line-height: 1.1;
+      font-weight: 760;
+      letter-spacing: 0;
+    }
+
+    .subtitle {
+      margin-top: 5px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: flex-end;
+      align-items: center;
+    }
+
+    select,
+    input {
+      height: 38px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: #fff;
+      color: var(--ink);
+      padding: 0 11px;
+      font: inherit;
+    }
+
+    select {
+      min-width: 220px;
+    }
+
+    input {
+      width: min(280px, 38vw);
+    }
+
+    button {
+      height: 38px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: #fff;
+      color: var(--ink);
+      padding: 0 12px;
+      font: inherit;
+      cursor: pointer;
+    }
+
+    button.active {
+      border-color: var(--accent);
+      background: var(--chip);
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    main {
+      padding: 18px 0 32px;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(150px, 1fr));
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .stat {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 12px 14px;
+      box-shadow: var(--shadow);
+      min-height: 74px;
+    }
+
+    .stat-label {
+      color: var(--muted);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .stat-value {
+      margin-top: 5px;
+      font-size: 20px;
+      font-weight: 780;
+      line-height: 1.2;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 1fr 280px;
+      gap: 14px;
+      align-items: start;
+    }
+
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .table-wrap {
+      overflow: auto;
+      max-height: calc(100vh - 188px);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+    }
+
+    th,
+    td {
+      border-bottom: 1px solid var(--line);
+      padding: 9px 10px;
+      vertical-align: top;
+      text-align: left;
+    }
+
+    th {
+      position: sticky;
+      top: 0;
+      z-index: 2;
+      background: #f9fbfc;
+      color: #324255;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      white-space: nowrap;
+    }
+
+    tbody tr:hover {
+      background: #fbfcfd;
+    }
+
+    td.price,
+    th.price {
+      text-align: right;
+      white-space: nowrap;
+      font-variant-numeric: tabular-nums;
+    }
+
+    td.price.delta-high {
+      background: #fdeaea;
+      color: #8c2525;
+      font-weight: 760;
+    }
+
+    td.price.delta-low {
+      background: #e8f6ec;
+      color: #1f6b3a;
+      font-weight: 760;
+    }
+
+    .name {
+      min-width: 210px;
+      font-weight: 700;
+    }
+
+    .id {
+      min-width: 230px;
+      color: var(--muted);
+      font-family: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", monospace;
+      font-size: 12px;
+      word-break: break-word;
+    }
+
+    .reward {
+      min-width: 220px;
+      white-space: pre-line;
+    }
+
+    .converted {
+      min-width: 240px;
+      white-space: pre-line;
+    }
+
+    .notes {
+      min-width: 180px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      min-height: 22px;
+      border-radius: 999px;
+      background: var(--chip);
+      color: #244251;
+      padding: 2px 8px;
+      margin: 0 5px 5px 0;
+      font-size: 12px;
+      font-weight: 650;
+      white-space: nowrap;
+    }
+
+    .chip.warn {
+      color: var(--warn);
+      background: #fff4e3;
+    }
+
+    .chip.bad {
+      color: var(--bad);
+      background: #faeeee;
+    }
+
+    .side {
+      padding: 14px;
+    }
+
+    .side h2 {
+      margin: 0 0 10px;
+      font-size: 15px;
+    }
+
+    .price-list {
+      display: grid;
+      gap: 8px;
+    }
+
+    .price-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .price-row span:first-child {
+      color: var(--muted);
+    }
+
+    .game-card {
+      margin-top: 16px;
+      padding-top: 14px;
+      border-top: 1px solid var(--line);
+    }
+
+    .game-card p {
+      margin: 0 0 10px;
+      color: var(--muted);
+    }
+
+    .empty {
+      padding: 28px;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    @media (max-width: 980px) {
+      .topbar,
+      .layout,
+      .stats {
+        grid-template-columns: 1fr;
+      }
+
+      .controls {
+        justify-content: flex-start;
+      }
+
+      select,
+      input {
+        width: 100%;
+      }
+
+      .table-wrap {
+        max-height: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="shell topbar">
+      <div>
+        <h1>SoftConversion Rewards</h1>
+        <div class="subtitle" id="dataStatus">Loading CSV...</div>
+      </div>
+      <div class="controls">
+        <select id="gameSelect" aria-label="Game"></select>
+        <input id="searchInput" type="search" placeholder="Search name or ID" aria-label="Search">
+      </div>
+      <div class="controls" aria-label="Filters">
+        <button id="changedOnly" type="button">Changed</button>
+        <button id="pricedOnly" type="button">Priced</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="shell">
+    <section class="stats" aria-label="Summary">
+      <div class="stat">
+        <div class="stat-label">Rows</div>
+        <div class="stat-value" id="rowCount">0</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Visible</div>
+        <div class="stat-value" id="visibleCount">0</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Changed By Game</div>
+        <div class="stat-value" id="changedCount">0</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Selected Game</div>
+        <div class="stat-value" id="gameSummary">-</div>
+      </div>
+    </section>
+
+    <section class="layout">
+      <div class="panel">
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>ID</th>
+                <th>Common SoftConversion Reward</th>
+                <th class="price">Common $</th>
+                <th>Converted Reward</th>
+                <th class="price">Game $</th>
+                <th>Notes</th>
+              </tr>
+            </thead>
+            <tbody id="rewardBody"></tbody>
+          </table>
+          <div id="emptyState" class="empty" hidden>No matching rewards.</div>
+        </div>
+      </div>
+
+      <aside class="panel side">
+        <h2>SoftConversion Prices</h2>
+        <div class="price-list" id="priceList"></div>
+        <div class="game-card">
+          <h2>Game Entities</h2>
+          <p id="gameDetails"></p>
+          <div id="gameChips"></div>
+        </div>
+      </aside>
+    </section>
+  </main>
+
+  <script>
+    const USD = {
+      hard: 0.0011,
+      hard_coin: 0.0011,
+      hard_ruby: 0.0079,
+      soft: 0.0016,
+      cheap: 0.693,
+      medium: 1.43,
+      expensive: 2.09,
+      before_cheap: 0.33,
+      before_medium: 0.55,
+      before_expensive: 0.693,
+      unlimited_lives_hour: 0.04,
+      life: 180 * 0.0011,
+      stickers_card: 0
+    };
+
+    const BOOSTER_CHAINS = {
+      expensive: ["expensive", "medium", "cheap"],
+      medium: ["medium", "cheap"],
+      cheap: ["cheap"],
+      before_expensive: ["before_expensive", "expensive", "medium", "cheap", "before_medium", "before_cheap"],
+      before_medium: ["before_medium", "medium", "cheap", "before_cheap"],
+      before_cheap: ["before_cheap", "cheap"]
+    };
+
+    const GAMES = [
+      {
+        id: "adventure",
+        label: "adventure",
+        group: "CleverApps match3",
+        currencies: ["hard", "lives"],
+        stickers: true,
+        boosters: {
+          cheap: "cell",
+          medium: "line",
+          expensive: "color",
+          before_cheap: "combo",
+          before_medium: "moves",
+          before_expensive: "multicolor"
+        }
+      },
+      {
+        id: "heroes",
+        label: "heroes",
+        group: "CleverApps match3",
+        currencies: ["hard", "lives"],
+        stickers: true,
+        sameAs: "adventure"
+      },
+      {
+        id: "riddles",
+        label: "riddles",
+        group: "CleverApps match3",
+        currencies: ["hard", "lives", "energy", "exp", "wands"],
+        stickers: true,
+        sameAs: "adventure"
+      },
+      {
+        id: "runes",
+        label: "runes",
+        group: "CleverApps match3",
+        currencies: ["hard", "lives"],
+        stickers: true,
+        sameAs: "adventure"
+      },
+      {
+        id: "tripeaks",
+        label: "tripeaks",
+        group: "CleverApps solitaire",
+        currencies: ["hard", "lives"],
+        stickers: true,
+        boosters: {
+          cheap: "undo",
+          expensive: "wildcard",
+          before_cheap: "magnet",
+          before_medium: "dice",
+          before_expensive: "jokers"
+        }
+      },
+      {
+        id: "spades",
+        label: "spades",
+        group: "CleverApps solitaire",
+        currencies: ["hard", "lives"],
+        stickers: false,
+        sameAs: "tripeaks"
+      },
+      {
+        id: "zenmatch",
+        label: "zenmatch",
+        group: "CleverApps tile3",
+        currencies: ["hard", "soft", "lives"],
+        stickers: true,
+        boosters: {
+          cheap: "tile_shuffle",
+          medium: "undo",
+          expensive: "vacuum"
+        }
+      },
+      {
+        id: "tilehero",
+        label: "tilehero",
+        group: "CleverApps tile3",
+        currencies: ["hard", "lives"],
+        stickers: true,
+        sameAs: "zenmatch"
+      },
+      {
+        id: "tetris",
+        label: "tetris",
+        group: "CleverApps blocks",
+        currencies: ["hard"],
+        stickers: false,
+        boosters: {
+          cheap: "undo_piece",
+          medium: "replace_all",
+          expensive: "clear_pieces"
+        }
+      },
+      {
+        id: "woodenblock",
+        label: "woodenblock",
+        group: "CleverApps blocks",
+        currencies: ["hard", "soft", "lives"],
+        stickers: true,
+        sameAs: "tetris"
+      },
+      {
+        id: "cubeblock",
+        label: "cubeblock",
+        group: "CleverApps blocks",
+        currencies: ["hard"],
+        stickers: false,
+        boosters: {}
+      },
+      {
+        id: "crocword",
+        label: "crocword",
+        group: "CleverApps board",
+        currencies: ["hard"],
+        stickers: true,
+        boosters: {
+          cheap: "hint",
+          expensive: "open_letter"
+        }
+      },
+      {
+        id: "magicwords",
+        label: "magicwords",
+        group: "CleverApps board",
+        currencies: ["hard"],
+        stickers: true,
+        sameAs: "crocword"
+      },
+      {
+        id: "wordsoup",
+        label: "wordsoup",
+        group: "CleverApps board",
+        currencies: ["hard"],
+        stickers: false,
+        sameAs: "crocword"
+      },
+      {
+        id: "olympics",
+        label: "olympics",
+        group: "CleverApps board",
+        currencies: ["hard", "lives"],
+        stickers: true,
+        sameAs: "crocword"
+      },
+      {
+        id: "scramble",
+        label: "scramble",
+        group: "CleverApps board",
+        currencies: ["hard"],
+        stickers: true,
+        boosters: {
+          cheap: "shuffle",
+          expensive: "hint"
+        }
+      },
+      {
+        id: "differences",
+        label: "differences",
+        group: "CleverApps misc",
+        currencies: ["hard", "lives"],
+        stickers: false,
+        boosters: {
+          cheap: "discover",
+          expensive: "brush"
+        }
+      },
+      {
+        id: "mergecraft",
+        label: "mergecraft",
+        group: "CleverApps merge",
+        currencies: ["hard", "energy", "exp", "soft", "wands", "worker"],
+        stickers: true,
+        boosters: {}
+      },
+      {
+        id: "fairy",
+        label: "fairy",
+        group: "CleverApps merge",
+        currencies: ["hard", "energy", "exp", "wands", "worker"],
+        stickers: true,
+        boosters: {}
+      },
+      {
+        id: "wondermerge",
+        label: "wondermerge",
+        group: "CleverApps merge",
+        currencies: ["hard", "energy", "exp", "wands", "worker"],
+        stickers: true,
+        boosters: {}
+      },
+      {
+        id: "hustlemerge",
+        label: "hustlemerge",
+        group: "CleverApps merge",
+        currencies: ["hard", "energy", "exp", "wands", "worker"],
+        stickers: true,
+        boosters: {}
+      },
+      {
+        id: "garden",
+        label: "garden",
+        group: "CleverApps merge2",
+        currencies: ["hard", "energy", "exp"],
+        stickers: false,
+        boosters: {}
+      },
+      {
+        id: "ladacha",
+        label: "ladacha",
+        group: "CleverApps merge2",
+        currencies: ["hard", "energy", "exp", "coins_hard_skin"],
+        stickers: false,
+        boosters: {}
+      },
+      {
+        id: "arrowsaway",
+        label: "arrowsaway",
+        group: "Aisensia",
+        currencies: ["hard", "soft"],
+        stickers: false,
+        boosters: {
+          cheap: "cheap_booster",
+          medium: "medium_booster",
+          expensive: "expensive_booster"
+        }
+      },
+      {
+        id: "sorthaven",
+        label: "sorthaven",
+        group: "Aisensia",
+        currencies: ["hard", "soft", "lives"],
+        stickers: false,
+        boosters: {
+          cheap: "undo_booster",
+          medium: "shuffle_booster",
+          expensive: "hidden_color"
+        }
+      },
+      {
+        id: "segmentsolitaire",
+        label: "segmentsolitaire",
+        group: "Aisensia",
+        currencies: ["hard"],
+        stickers: false,
+        boosters: {
+          cheap: "cheap_booster",
+          medium: "medium_booster"
+        }
+      },
+      {
+        id: "jigsolitaire",
+        label: "jigsolitaire",
+        group: "Aisensia",
+        currencies: ["hard", "soft"],
+        stickers: false,
+        boosters: {}
+      },
+      {
+        id: "yatzy",
+        label: "yatzy",
+        group: "Aisensia",
+        currencies: ["hard", "lives"],
+        stickers: false,
+        boosters: {}
+      },
+      {
+        id: "sudoku",
+        label: "sudoku",
+        group: "Aisensia",
+        currencies: ["hard", "lives", "soft"],
+        stickers: false,
+        boosters: {
+          cheap: "cheap_booster",
+          medium: "medium_booster",
+          expensive: "expensive_booster"
+        }
+      },
+      {
+        id: "tapaway",
+        label: "tapaway",
+        group: "Aisensia",
+        currencies: ["hard", "lives"],
+        stickers: false,
+        sameAs: "sudoku"
+      },
+      {
+        id: "magicbottles",
+        label: "magicbottles",
+        group: "Aisensia",
+        currencies: ["hard", "lives"],
+        stickers: false,
+        sameAs: "sorthaven"
+      },
+      {
+        id: "colorsort",
+        label: "colorsort",
+        group: "Aisensia",
+        currencies: ["hard"],
+        stickers: false,
+        boosters: {}
+      }
+    ];
+
+    const state = {
+      rows: [],
+      changedOnly: false,
+      pricedOnly: false
+    };
+
+    function resolveProfiles() {
+      const byId = Object.fromEntries(GAMES.map((game) => [game.id, game]));
+      GAMES.forEach((game) => {
+        if (game.sameAs) {
+          game.boosters = { ...(byId[game.sameAs].boosters || {}) };
+        }
+      });
+    }
+
+    function formatUsd(value) {
+      if (!Number.isFinite(value)) {
+        return "-";
+      }
+      if (value > 0 && value < 0.01) {
+        return `$${value.toFixed(4)}`;
+      }
+      return `$${value.toFixed(2)}`;
+    }
+
+    function parseCsv(text) {
+      const rows = [];
+      let row = [];
+      let cell = "";
+      let quoted = false;
+
+      for (let i = 0; i < text.length; i++) {
+        const ch = text[i];
+        const next = text[i + 1];
+
+        if (quoted) {
+          if (ch === '"' && next === '"') {
+            cell += '"';
+            i++;
+          } else if (ch === '"') {
+            quoted = false;
+          } else {
+            cell += ch;
+          }
+          continue;
+        }
+
+        if (ch === '"') {
+          quoted = true;
+        } else if (ch === ",") {
+          row.push(cell);
+          cell = "";
+        } else if (ch === "\n") {
+          row.push(cell.replace(/\r$/, ""));
+          rows.push(row);
+          row = [];
+          cell = "";
+        } else {
+          cell += ch;
+        }
+      }
+
+      row.push(cell.replace(/\r$/, ""));
+      rows.push(row);
+      return rows;
+    }
+
+    function normalizeRewardText(text) {
+      return String(text || "")
+        .replace(/\r/g, "")
+        .replace(/\bhrs\b/gi, "hours")
+        .replace(/\bhr\b/gi, "hour")
+        .replace(/\bhard coin\b/gi, "hard")
+        .replace(/\bhard coins\b/gi, "hard")
+        .replace(/\bhard ruby\b/gi, "hard")
+        .replace(/\bhard rubies\b/gi, "hard")
+        .replace(/\bboosters_before\b/gi, "booster_before")
+        .replace(/\bbooster before\b/gi, "booster_before")
+        .replace(/\bbooster_before cheap\b/gi, "booster_before_cheap")
+        .replace(/\bbooster_before medium\b/gi, "booster_before_medium")
+        .replace(/\bbooster_before expensive\b/gi, "booster_before_expensive")
+        .replace(/\bbooster cheap\b/gi, "booster_cheap")
+        .replace(/\bbooster medium\b/gi, "booster_medium")
+        .replace(/\bbooster expensive\b/gi, "booster_expensive");
+    }
+
+    function parseReward(text) {
+      const normalized = normalizeRewardText(text);
+      const items = [];
+      const unknown = [];
+      const lines = normalized.split(/\n+/).map((line) => line.trim()).filter(Boolean);
+
+      lines.forEach((line) => {
+        if (/^(N\/A|-|0)$/i.test(line)) {
+          return;
+        }
+
+        const amountMatch = line.match(/(?:^|\s)x?\s*(\d+(?:[.,]\d+)?)/i);
+        const amount = amountMatch ? Number(amountMatch[1].replace(",", ".")) : 1;
+        const lower = line.toLowerCase();
+
+        let type = null;
+        let label = null;
+        let count = amount;
+
+        if (/\bbooster_before_cheap\b|\bbefore_cheap\b/.test(lower)) {
+          type = "booster";
+          label = "before_cheap";
+        } else if (/\bbooster_before_medium\b|\bbefore_medium\b/.test(lower)) {
+          type = "booster";
+          label = "before_medium";
+        } else if (/\bbooster_before_expensive\b|\bbefore_expensive\b/.test(lower)) {
+          type = "booster";
+          label = "before_expensive";
+        } else if (/\bbooster_cheap\b|\bcheap booster\b|\bcheap\b/.test(lower)) {
+          type = "booster";
+          label = "cheap";
+        } else if (/\bbooster_medium\b|\bmedium booster\b|\bmedium\b/.test(lower)) {
+          type = "booster";
+          label = "medium";
+        } else if (/\bbooster_expensive\b|\bexpensive booster\b|\bexpensive\b/.test(lower)) {
+          type = "booster";
+          label = "expensive";
+        } else if (/\bunlimited lives\b/.test(lower)) {
+          type = "unlimited_lives";
+          label = "unlimited lives";
+          count = parseTimeHours(lower, amount);
+        } else if (/\blives\b|\blife\b/.test(lower)) {
+          type = "lives";
+          label = "lives";
+        } else if (/\bsticker_pack\b|\bstickers?\b|\bcards?\b/.test(lower)) {
+          type = "stickers";
+          label = "stickers";
+          const cards = lower.match(/(\d+)\s*cards?/);
+          count = cards ? Number(cards[1]) : amount;
+        } else if (/\bsoft\b/.test(lower)) {
+          type = "soft";
+          label = "soft";
+        } else if (/\bhard\b/.test(lower)) {
+          type = "hard";
+          label = "hard";
+        } else if (/\bnoads\b|\bno ads\b/.test(lower)) {
+          type = "noAds";
+          label = "noAds";
+        } else if (/\bgrowthfund\b|\bgrowth fund\b/.test(lower)) {
+          type = "growthFund";
+          label = "growthFund";
+        }
+
+        if (type) {
+          items.push({ type, key: label, amount: count, raw: line });
+        } else {
+          unknown.push(line);
+        }
+      });
+
+      return { items, unknown };
+    }
+
+    function parseTimeHours(text, fallback) {
+      const amount = Number(fallback) || 1;
+      if (/\bday/.test(text)) {
+        return amount * 24;
+      }
+      if (/\bminute/.test(text)) {
+        return amount / 60;
+      }
+      return amount;
+    }
+
+    function priceItem(item) {
+      if (item.type === "hard") return item.amount * USD.hard;
+      if (item.type === "soft") return item.amount * USD.soft;
+      if (item.type === "booster") return item.amount * USD[item.key];
+      if (item.type === "unlimited_lives") return item.amount * USD.unlimited_lives_hour;
+      if (item.type === "lives") return item.amount * USD.life;
+      if (item.type === "stickers") return item.amount * USD.stickers_card;
+      return 0;
+    }
+
+    function displayItem(item) {
+      const amount = Number.isInteger(item.amount) ? item.amount : Number(item.amount.toFixed(2));
+      if (item.type === "booster") return `x${amount} ${item.key}`;
+      if (item.type === "unlimited_lives") return `${amount}h unlimited lives`;
+      if (item.type === "lives") return `x${amount} lives`;
+      if (item.type === "stickers") return `x${amount} stickers`;
+      if (item.type === "hard") return `x${amount} hard`;
+      if (item.type === "soft") return `x${amount} soft`;
+      return item.raw || `${amount} ${item.type}`;
+    }
+
+    function aggregate(items) {
+      const map = new Map();
+      items.forEach((item) => {
+        const key = `${item.type}:${item.key}`;
+        const existing = map.get(key);
+        if (existing) {
+          existing.amount += item.amount;
+        } else {
+          map.set(key, { ...item });
+        }
+      });
+      return Array.from(map.values());
+    }
+
+    function resolveBooster(key, game) {
+      const chain = BOOSTER_CHAINS[key] || [key];
+      for (const tier of chain) {
+        if (game.boosters[tier]) {
+          return {
+            tier,
+            name: game.boosters[tier],
+            fallback: tier !== key,
+            chain
+          };
+        }
+      }
+      return null;
+    }
+
+    function convertReward(parsed, game) {
+      const converted = [];
+      const notes = [];
+
+      parsed.items.forEach((item) => {
+        if (item.type === "booster") {
+          const resolved = resolveBooster(item.key, game);
+          if (resolved) {
+            converted.push({
+              type: "booster",
+              key: resolved.tier,
+              amount: item.amount,
+              raw: `x${item.amount} ${resolved.name}`,
+              displayName: resolved.name
+            });
+            if (resolved.fallback) {
+              notes.push(`${item.key} -> ${resolved.tier}`);
+            }
+          } else {
+            const hardAmount = item.amount * Math.round(USD[item.key] / USD.hard);
+            converted.push({
+              type: "hard",
+              key: "hard",
+              amount: hardAmount,
+              raw: `x${hardAmount} hard`
+            });
+            notes.push(`${item.key} -> hard`);
+          }
+          return;
+        }
+
+        if (item.type === "stickers" && !game.stickers) {
+          notes.push("stickers unavailable");
+          return;
+        }
+
+        converted.push({ ...item });
+      });
+
+      return {
+        items: aggregate(converted),
+        notes: [...new Set(notes)]
+      };
+    }
+
+    function itemToDisplay(item) {
+      if (item.type === "booster") {
+        return `x${item.amount} ${item.key}`;
+      }
+      return displayItem(item);
+    }
+
+    function pricedDisplay(item, formatter) {
+      return `${formatter(item)} - ${formatUsd(priceItem(item))}`;
+    }
+
+    function rewardValue(items) {
+      return items.reduce((sum, item) => sum + priceItem(item), 0);
+    }
+
+    function rewardsEqual(common, converted) {
+      return common.map(displayItem).join("|") === converted.map(itemToDisplay).join("|");
+    }
+
+    function priceDeltaClass(commonPrice, convertedPrice) {
+      if (!commonPrice || commonPrice <= 0) {
+        return "";
+      }
+
+      const ratio = convertedPrice / commonPrice;
+      if (ratio > 1.3) {
+        return " delta-high";
+      }
+      if (ratio < 0.7) {
+        return " delta-low";
+      }
+      return "";
+    }
+
+    function hydrateRows(csvText) {
+      const rows = parseCsv(csvText);
+      return rows.slice(2)
+        .map((row) => ({
+          name: row[0] || "",
+          id: row[1] || "",
+          common: row[10] || "",
+          condition: row[11] || "",
+          comment: row[14] || ""
+        }))
+        .filter((row) => row.name && row.id && row.common && !/^(N\/A|-|0)$/i.test(row.common.trim()))
+        .map((row) => {
+          const parsed = parseReward(row.common);
+          return {
+            ...row,
+            parsed,
+            commonItems: aggregate(parsed.items),
+            commonPrice: rewardValue(parsed.items)
+          };
+        });
+    }
+
+    function populateGames() {
+      const select = document.getElementById("gameSelect");
+      select.innerHTML = "";
+      let currentGroup = "";
+      let groupNode = null;
+
+      GAMES.forEach((game) => {
+        if (game.group !== currentGroup) {
+          currentGroup = game.group;
+          groupNode = document.createElement("optgroup");
+          groupNode.label = currentGroup;
+          select.appendChild(groupNode);
+        }
+        const option = document.createElement("option");
+        option.value = game.id;
+        option.textContent = game.label;
+        groupNode.appendChild(option);
+      });
+
+      select.value = "zenmatch";
+    }
+
+    function populatePrices() {
+      const rows = [
+        ["hard", USD.hard],
+        ["soft", USD.soft],
+        ["booster_before_cheap", USD.before_cheap],
+        ["booster_before_medium", USD.before_medium],
+        ["booster_before_expensive", USD.before_expensive],
+        ["booster_cheap", USD.cheap],
+        ["booster_medium", USD.medium],
+        ["booster_expensive", USD.expensive],
+        ["unlimited lives 1h", USD.unlimited_lives_hour],
+        ["life", USD.life],
+        ["stickers", USD.stickers_card]
+      ];
+      document.getElementById("priceList").innerHTML = rows.map(([name, value]) => (
+        `<div class="price-row"><span>${name}</span><strong>${formatUsd(value)}</strong></div>`
+      )).join("");
+    }
+
+    function getSelectedGame() {
+      return GAMES.find((game) => game.id === document.getElementById("gameSelect").value) || GAMES[0];
+    }
+
+    function renderGame(game) {
+      const tiers = Object.entries(game.boosters || {});
+      document.getElementById("gameSummary").textContent = game.label;
+      document.getElementById("gameDetails").textContent = `${game.group}. Currencies: ${game.currencies.join(", ")}. Stickers: ${game.stickers ? "yes" : "no"}.`;
+      document.getElementById("gameChips").innerHTML = tiers.length
+        ? tiers.map(([tier, name]) => `<span class="chip">${tier}: ${name}</span>`).join("")
+        : `<span class="chip warn">no boosters</span>`;
+    }
+
+    function render() {
+      const game = getSelectedGame();
+      const query = document.getElementById("searchInput").value.trim().toLowerCase();
+      const body = document.getElementById("rewardBody");
+      const rows = [];
+      let changedCount = 0;
+
+      state.rows.forEach((row) => {
+        const converted = convertReward(row.parsed, game);
+        const convertedPrice = rewardValue(converted.items);
+        const changed = !rewardsEqual(row.commonItems, converted.items) || converted.notes.length > 0;
+
+        if (changed) changedCount++;
+        if (state.changedOnly && !changed) return;
+        if (state.pricedOnly && convertedPrice <= 0) return;
+        if (query && !`${row.name} ${row.id} ${row.common}`.toLowerCase().includes(query)) return;
+
+        const notes = converted.notes.map((note) => `<span class="chip warn">${escapeHtml(note)}</span>`);
+        if (row.condition) notes.push(`<span class="chip">${escapeHtml(row.condition)}</span>`);
+        if (row.parsed.unknown.length) {
+          const unparsed = row.parsed.unknown.join(" | ");
+          notes.push(`<span class="chip bad" title="${escapeHtml(unparsed)}">unparsed: ${escapeHtml(unparsed)}</span>`);
+        }
+
+        rows.push(`
+          <tr>
+            <td class="name">${escapeHtml(row.name)}</td>
+            <td class="id">${escapeHtml(row.id)}</td>
+            <td class="reward">${escapeHtml(row.commonItems.map((item) => pricedDisplay(item, displayItem)).join("\n") || row.common)}</td>
+            <td class="price">${formatUsd(row.commonPrice)}</td>
+            <td class="converted">${escapeHtml(converted.items.map((item) => pricedDisplay(item, itemToDisplay)).join("\n"))}</td>
+            <td class="price${priceDeltaClass(row.commonPrice, convertedPrice)}">${formatUsd(convertedPrice)}</td>
+            <td class="notes">${notes.join("")}</td>
+          </tr>
+        `);
+      });
+
+      body.innerHTML = rows.join("");
+      document.getElementById("emptyState").hidden = rows.length > 0;
+      document.getElementById("rowCount").textContent = state.rows.length;
+      document.getElementById("visibleCount").textContent = rows.length;
+      document.getElementById("changedCount").textContent = changedCount;
+      renderGame(game);
+    }
+
+    function escapeHtml(value) {
+      return String(value).replace(/[&<>"']/g, (ch) => ({
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        '"': "&quot;",
+        "'": "&#039;"
+      }[ch]));
+    }
+
+    async function init() {
+      resolveProfiles();
+      populateGames();
+      populatePrices();
+
+      document.getElementById("gameSelect").addEventListener("change", render);
+      document.getElementById("searchInput").addEventListener("input", render);
+      document.getElementById("changedOnly").addEventListener("click", (event) => {
+        state.changedOnly = !state.changedOnly;
+        event.currentTarget.classList.toggle("active", state.changedOnly);
+        render();
+      });
+      document.getElementById("pricedOnly").addEventListener("click", (event) => {
+        state.pricedOnly = !state.pricedOnly;
+        event.currentTarget.classList.toggle("active", state.pricedOnly);
+        render();
+      });
+
+      try {
+        const response = await fetch("softConversion.csv", { cache: "no-store" });
+        if (!response.ok) throw new Error(`CSV request failed: ${response.status}`);
+        const text = await response.text();
+        state.rows = hydrateRows(text);
+        document.getElementById("dataStatus").textContent = `Loaded ${state.rows.length} reward rows from softConversion.csv`;
+        render();
+      } catch (error) {
+        document.getElementById("dataStatus").textContent = `Could not load CSV: ${error.message}`;
+        render();
+      }
+    }
+
+    init();
+  </script>
+</body>
+</html>

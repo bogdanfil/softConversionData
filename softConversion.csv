@@ -1,0 +1,538 @@
+,,Aisensia,,,,Clever Apps,,,,Final,Condition,,,Comment,,,,,
+Name,ID,old,$$,new,$$,old,$$,new,$$,,,$$,Product Price $$,,,,,,
+Prolongation RICH,Prolongation.CUSTOM_FIRST_PRICE,125 hard ruby,"=125*$S$4",N/A,,125 hard ruby,"=125*$S$4",1750 hard coin,"=1750*$T$5",N/A,,,,+10 moves + booster,,,,old,new
+Prolongation 0,Prolongation.PRICES[0],50 hard ruby,"=50*$S$4",700 hard coin,"=700*$T$5",50 hard ruby,"=50*$S$4",700 hard coin,"=700*$T$5",900 hard coin,,"=900*$T$5",,+5 moves,,,Hard Ruby,"0,0079","0,0011"
+Prolongation 1,Prolongation.PRICES[1],150 hard ruby,"=150*$S$4",2100 hard coin,"=2100*$T$5",150 hard ruby,"=150*$S$4",2100 hard coin,"=2100*$T$5",1900 hard coin,,"=1900*$T$5",,+5 moves,,,Hard Coin,"0,0044","0,0011"
+Prolongation 2,Prolongation.PRICES[2],250 hard ruby,"=250*$S$4",3500 hard coin,"=3500*$T$5",250 hard ruby,"=250*$S$4",3500 hard coin,"=3500*$T$5",2900 hard coin,,"=2900*$T$5",,+5 moves,,,Soft,"0,0016",N/A
+Prolongation 3,Prolongation.PRICES[3],350 hard ruby,"=350*$S$4",4900 hard coin,"=4900*$T$5",350 hard ruby,"=350*$S$4",4900 hard coin,"=4900*$T$5",5900 hard coin,>15k hard,"=5900*$T$5",,+5 moves,,,booster_before cheap,"0,22","0,33"
+Prolongation 4,Prolongation.PRICES[4],500 hard ruby,"=500*$S$4",7000 hard coin,"=7000*$T$5",500 hard ruby,"=500*$S$4",7000 hard coin,"=7000*$T$5",12900 hard coin,>50k hard,"=12900*$T$5",,+5 moves,,,booster_before medium,"0,44","0,55"
+Prolongation 5,Prolongation.PRICES[5],N/A,,N/A,,N/A,,N/A,,24900 hard coin,>50k hard,"=24900*$T$5",,"+5 moves  
+/{+1 cheap + 1 medium + 1 expensive}",,,booster_before expensive,"0,66","0,69"
+Hard 3 USD,Products.gold500,x200 hard ruby,"=200*$S$4",x1400 hard coin,"=1400*$T$5",x200 hard ruby,"=200*$S$4",x1500 hard coin,"=1500*$T$5",x1500 hard coin,,"=1500*$T$5","$3,00",Royal Match,,,booster_cheap,"0,59","0,69"
+Hard 10 USD,Products.gold1800,x900 hard ruby,"=900*$S$4",x6300 hard coin,"=6300*$T$5",x900 hard ruby,"=900*$S$4",x6250 hard coin,"=6250*$T$5",x6250 hard coin,,"=6250*$T$5","$10,00",Royal Match,,,booster_medium,"1,19","1,43"
+Hard 20 USD,Products.gold3800,x2100 hard ruby,"=2100*$S$4",x14700 hard coin,"=14700*$T$5",x2100 hard ruby,"=2100*$S$4",x13500 hard coin,"=13500*$T$5",x13500 hard coin,,"=13500*$T$5","$20,00",Royal Match,,,booster_expensive,"1,58","2,09"
+Hard 30 USD,Products.gold6000,x3500 hard ruby,"=3500*$S$4",x24500 hard coin,"=24500*$T$5",x3500 hard ruby,"=3500*$S$4",x25000 hard coin,"=25000*$T$5",x25000 hard coin,,"=25000*$T$5","$30,00",Royal Match,,,unlimited lives 1h,"0,04","0,04"
+Hard 100 USD,Products.gold25000,x14000 hard ruby,"=14000*$S$4",x98000 hard coin,"=98000*$T$5",x14000 hard ruby,"=14000*$S$4",x100000 hard coin,"=100000*$T$5",x100000 hard coin,,"=100000*$T$5","$100,00",Royal Match,,,,,
+Starter Pack 1 USD,Products.starterPack0,"x50 hard ruby
+ x200 soft","=50*$S$4+200*$S$6",x630 hard coin,"=630*$T$5","150 hard ruby
+500 soft
+x1 booster_cheap
+x1 booster_expensive","=150*$S$4+500*$S$6+1*$S$10+1*$S$12","1750 hard coin
+x1 booster_medium
+x1 booster_cheap
+x1 booster_expensive","=1750*$T$5+1*$T$11+1*$T$10+1*$T$12","x1000 hard coin
+x1 booster_medium",,"=1000*$T$5+1*$T$11","$1,00","x4000 hard
+x2 boosters (medium)",Toon Blast,,,,
+Starter Pack 5 USD,Products.starterPack,"x150 hard ruby
+ x1000 soft","=150*$S$4+1000*$S$6",x2450 hard coin,"=2450*$T$5","500 hard ruby
+1500 soft
+x1 booster_medium
+48 hrs unlimited lives","=500*$S$4+1500*$S$6+1*$S$11+48*$S$13","5600 hard coin
+x1 booster_expensive
+x1 booster_medium
+48 hrs unlimited lives","=5600*$T$5+1*$T$12+1*$T$11+48*$T$13","x3500 hard coin
+1 hrs unlimited lives
+x1 booster_cheap
+x1 booster_expensive",,"=3500*$T$5+1*$T$13+1*$T$10+1*$T$12","$5,00","x8000 hard
+1 hrs unlimited lives
+x1 boosters (each)
+8 USD",Toon Blast,,,,
+Starter Pack 30 USD,Products.starterPack2,"x700 hard ruby
+ x6000 soft","=700*$S$4+6000*$S$6",x13300 hard coin,"=13300*$T$5","3500 hard coin
+10000 soft
+x15 booster_expensive
+x15 booster_medium","=3500*$S$5+10000*$S$6+15*$S$12+15*$S$11","38500 hard coin
+x15 booster_cheap
+x15 booster_expensive
+x15 booster_medium","=38500*$T$5+15*$T$10+15*$T$12+15*$T$11","x25000 hard coin
+2 hrs unlimited lives
+30m - boosters_before
+x5 booster_cheap
+x5 booster_medium
+x5 booster_expensive",,"=25000*$T$5+2*$T$13+5*$T$10+5*$T$11+5*$T$12","$30,00","x12000 hard
+2 hrs unlimited lives
+30m - boosters_before
+x3 boosters (each)
+10 USD",Toon Blast,,,,
+IAP noAds,Products.noAds,x150 hard ruby,"=150*$S$4",x1050 hard coin,"=1050*$T$5",x150 hard ruby,"=150*$S$4",x1050 hard coin,"=1050*$T$5",x1000 hard coin,,"=1000*$T$5","$4,00",,,,,,
+Pass level (default),RewardsConfig.LevelBasicReward.default,x5 hard ruby,"=5*$S$4",x35 hard coin,"=35*$T$5",x3 hard ruby,"=3*$S$4",x3 hard coin,"=3*$T$5",x32 hard coin,,"=32*$T$5",,,,,,,
+Pass level (hard),RewardsConfig.LevelBasicReward.hard,x10 hard ruby,"=10*$S$4",x110 hard coin,"=110*$T$5",x5 hard ruby,"=5*$S$4",x5 hard coin,"=5*$T$5",x54 hard coin,,"=54*$T$5",,,,,,,
+Pass Level (super-hard),RewardsConfig.LevelBasicReward.superHard,N/A,,N/A,,N/A,,x76 hard coin,"=76*$T$5",N/A,,,,,,,,,
+Pass level (tricky),RewardsConfig.LevelBasicReward.tricky,x7 hard ruby,"=7*$S$4",x70 hard coin,"=70*$T$5",x3 hard ruby,"=3*$S$4",x3 hard coin,"=3*$T$5",x50 hard coin,,"=50*$T$5",,,,,,,
+Simple Meta 0,RewardsConfig.LocationSimple0,x50 soft,"=50*$S$6",x350 hard coin,"=350*$T$5",x50 soft,"=50*$S$6",x350 hard coin,"=350*$T$5","x250 hard coin
+x1 booster_before_cheap
+x1 booster_before_medium
+x1 booster_before_expensive
+x1 booster_cheap",,"=250*$T$5+1*$T$7+1*$T$8+1*$T$9+1*$T$10",,location 1,,,,,
+Simple Meta 1,RewardsConfig.LocationSimple1,N/A,,N/A,,N/A,,N/A,,"x250 hard coin
+x1 booster_before_cheap
+x1 booster_before_medium
+x1 booster_before_expensive
+x1 booster_cheap
+x1 booster_medium
+x1 sticker_pack (4 cards)",,"=250*$T$5+1*$T$7+1*$T$8+1*$T$9+1*$T$10+1*$T$11",,location 2-45,,,,,
+Simple Meta 2,RewardsConfig.LocationSimple2,N/A,,N/A,,N/A,,N/A,,"x250 hard coin
+x1 booster_before_cheap
+x1 booster_before_medium
+x1 booster_before_expensive
+x1 booster_cheap
+x1 booster_medium
+x1 booster_expensive
+x1 sticker_pack (4 cards)",,"=250*$T$5+1*$T$7+1*$T$8+1*$T$9+1*$T$10+1*$T$11+1*$T$12",,location 46+,,,,,
+Booster Before Cheap Price,Boosters.PRICES.BEFORE_CHEAP,N/A,,N/A,,50 hard coin,"=50*$S$5",N/A,,300 hard coin,,"=300*$T$5",,Boosters_Before,,,,,
+Booster Before Medium Price,Boosters.PRICES.BEFORE_MEDIUM,N/A,,N/A,,100 hard coin,"=100*$S$5",N/A,,500 hard coin,,"=500*$T$5",,,,,,,
+Booster Before Expensive Price,Boosters.PRICES.BEFORE_EXPENSIVE,N/A,,N/A,,150 hard coin,"=150*$S$5",N/A,,630 hard coin,,"=630*$T$5",,,,,,,
+Cheap Booster Price,Boosters.PRICES.CHEAP,N/A,,N/A,,150 soft,"=150*$S$6",210 hard coin,"=210*$T$5",630 hard coin,,"=630*$T$5",,,,,,,
+Medium Booster Price,Boosters.PRICES.MEDIUM,N/A,,N/A,,300 soft,"=300*$S$6",420 hard coin,"=420*$T$5",1300 hard coin,,"=1300*$T$5",,Boosters,,,,,
+Expensive Booster Price,Boosters.PRICES.EXPENSIVE,N/A,,N/A,,400 soft,"=400*$S$6",560 hard coin,"=560*$T$5",1900 hard coin,,"=1900*$T$5",,,,,,,
+Lives Shop Refill Lives,VirtualProducts.refillLives.price,x99 hard ruby,"=99*$S$4",x690 hard coin,"=690*$T$5",x99 hard ruby,"=99*$S$4",x699 hard coin,"=699*$T$5","3 lives = 540 hard coin
+5 lives = 900 hard coin",,"=540*$T$5+900*$T$5",,,,,,,
+Sticker Pack Small,VirtualProducts.stickers2.price,N/A,,N/A,,N/A,,700 hard coin,"=700*$T$5",700 hard coin,,"=700*$T$5",,,,,,,
+Sticker Pack Medium,VirtualProducts.stickers1.price,N/A,,N/A,,N/A,,1750 hard coin,"=1750*$T$5",1750 hard coin,,"=1750*$T$5",,,,,,,
+Sticker Pack Large,VirtualProducts.stickers0.price,N/A,,N/A,,N/A,,3500 hard coin,"=3500*$T$5",3500 hard coin,,"=3500*$T$5",,,,,,,
+Unlimited Lives 3 Days,VirtualProducts.unlimitedLives.price,N/A,,N/A,,290 hard ruby,"=290*$S$4",1999 hard coin,"=1999*$T$5",2199 hard coin,,"=2199*$T$5",,Unlimited Lives,,,,,
+Kings Cup Offer Reward,RewardsConfig.KingsCupOffer,"x200 hard ruby
+ x2 cheap
+ x1 medium","=200*$S$4+2*$S$10+1*$S$11","x1400 hard coin
+ x2 cheap
+ x1 medium","=1400*$T$5+2*$T$10+1*$T$11",N/A,,N/A,,"x1400 hard coin
+x2 cheap
+x1 medium",,"=1400*$T$5+2*$T$10+1*$T$11",,,,,,,
+Lightning Rush Offer Reward,RewardsConfig.LightningRushOffer,"x200 hard ruby
+ x2 cheap
+ x1 medium","=200*$S$4+2*$S$10+1*$S$11","x1400 hard coin
+ x2 cheap
+ x1 medium","=1400*$T$5+2*$T$10+1*$T$11",N/A,,N/A,,"x1400 hard coin
+x2 cheap
+x1 medium",,"=1400*$T$5+2*$T$10+1*$T$11",,,,,,,
+Kings Cup 1st Place Reward,RewardsConfig.KingsCup[0],"x1 medium
+ x10 hard ruby","=1*$S$11+10*$S$4","x1 medium
+ x70 hard coin","=1*$T$11+70*$T$5","x1 medium
+ x10 hard ruby","=1*$S$11+10*$S$4","x1 medium
+ x70 hard coin","=1*$T$11+70*$T$5","x3 booster_before_cheap
+x3 booster_before_medium
+x3 booster_before_expensive
+x1 booster_cheap
+x1 booster_medium
+x1 booster_expensive
+3 hrs unlimited lives",,"=3*$T$7+3*$T$8+3*$T$9+1*$T$10+1*$T$11+1*$T$12+3*$T$13",,ref Royal Match,,,,,
+Kings Cup 2nd Place Reward,RewardsConfig.KingsCup[1],"x1 cheap
+ x5 hard ruby","=1*$S$10+5*$S$4","x1 cheap
+ x35 hard coin","=1*$T$10+35*$T$5","x1 cheap
+ x5 hard ruby","=1*$S$10+5*$S$4","x1 cheap
+ x35 hard coin","=1*$T$10+35*$T$5","x2 booster_before_cheap
+x2 booster_before_medium
+x2 booster_before_expensive
+x1 booster_cheap
+x1 booster_medium
+2 hrs unlimited lives",,"=2*$T$7+2*$T$8+2*$T$9+1*$T$10+1*$T$11+2*$T$13",,ref Royal Match,,,,,
+Kings Cup 3rd Place Reward,RewardsConfig.KingsCup[2],N/A,,N/A,,N/A,,N/A,,"x2 booster_before_cheap
+x2 booster_before_medium
+x2 booster_before_expensive
+1 hrs unlimited lives",,"=2*$T$7+2*$T$8+2*$T$9+1*$T$13",,ref Royal Match,,,,,
+Kings Cup 4th-10th Place Reward,RewardsConfig.KingsCup[3],N/A,,N/A,,N/A,,N/A,,"x1 booster_before_cheap
+x1 booster_before_medium
+x1 booster_before_expensive",,"=1*$T$7+1*$T$8+1*$T$9",,ref Royal Match,,,,,
+Lightning Rush 1st Place Reward,RewardsConfig.LightningRush[0],"x300 soft
+ x1 medium
+ x20 hard ruby","=300*$S$6+1*$S$11+20*$S$4","x1 medium
+ x560 hard coin","=1*$T$11+560*$T$5","x300 soft
+ x1 medium
+ x20 hard ruby","=300*$S$6+1*$S$11+20*$S$4","x1 medium
+ x560 hard coin","=1*$T$11+560*$T$5","x1 booster_before_cheap
+x1 booster_before_medium
+x1 booster_before_expensive
+x1 booster_cheap
+x1 booster_medium
+x1 booster_expensive",,"=1*$T$7+1*$T$8+1*$T$9+1*$T$10+1*$T$11+1*$T$12",,ref Royal Match,,,,,
+Lightning Rush 2nd Place Reward,RewardsConfig.LightningRush[1],"x200 soft
+x1 cheap","=200*$S$6+1*$S$10","x1 cheap
+ x280 hard coin","=1*$T$10+280*$T$5","x200 soft
+x1 cheap","=200*$S$6+1*$S$10","x1 cheap
+ x280 hard coin","=1*$T$10+280*$T$5",N/A,,,,,,,,,
+Lightning Rush 3rd Place Reward,RewardsConfig.LightningRush[2],"x100 soft
+x1 cheap","=100*$S$6+1*$S$10","x1 cheap
+ x140 hard coin","=1*$T$10+140*$T$5","x100 soft
+x1 cheap","=100*$S$6+1*$S$10","x1 cheap
+ x140 hard coin","=1*$T$10+140*$T$5",N/A,,,,,,,,,
+Lightning Rush 4th Place Reward,RewardsConfig.LightningRush[3],"x50 soft
+x1 cheap","=50*$S$6+1*$S$10","x1 cheap
+ x70 hard coin","=1*$T$10+70*$T$5","x50 soft
+x1 cheap","=50*$S$6+1*$S$10","x1 cheap
+ x70 hard coin","=1*$T$10+70*$T$5",N/A,,,,,,,,,
+Mini Game Reward Slot 1,RewardsConfig.MiniGame[0],"x30 soft
+x1 cheap","=30*$S$6+1*$S$10","x40 hard coin
+ x1 cheap","=40*$T$5+1*$T$10","x70 hard coin
+x1 random booster (cheap/medium)","=70*$S$5+1*($S$10+$S$11)/2",,,"x40 hard coin
+x1 booster_cheap",,"=40*$T$5+1*$T$10",,,,,,,
+Mini Game Reward Slot 2,RewardsConfig.MiniGame[1],x20 soft,"=20*$S$6",x30 hard coin,"=30*$T$5","x70 hard coin
+x2 random booster (cheap/medium)","=70*$S$5+2*($S$10+$S$11)/2",,,x30 hard coin,,"=30*$T$5",,,,,,,
+Mini Game Reward Slot 3,RewardsConfig.MiniGame[2],"x15 soft
+x1 cheap","=15*$S$6+1*$S$10","x20 hard coin
+ x1 cheap","=20*$T$5+1*$T$10",x1 random booster (cheap/medium/expensive),"=1*($S$10+$S$11+$S$12)/3",,,"x20 hard coin
+x1 booster_cheap",,"=20*$T$5+1*$T$10",,,,,,,
+Mini Game Reward Slot 4,RewardsConfig.MiniGame[3],"x30 soft
+x1 cheap","=30*$S$6+1*$S$10","x40 hard coin
+ x1 cheap","=40*$T$5+1*$T$10",x2 random booster (cheap/medium/expensive),"=2*($S$10+$S$11+$S$12)/3",,,"x40 hard coin
+x1 booster_cheap",,"=40*$T$5+1*$T$10",,,,,,,
+Mini Game Reward Slot 5,RewardsConfig.MiniGame[4],"x25 soft
+x1 cheap","=25*$S$6+1*$S$10","x35 hard coin
+ x1 cheap","=35*$T$5+1*$T$10",,,,,"x35 hard coin
+x1 booster_cheap",,"=35*$T$5+1*$T$10",,,,,,,
+Mini Game Reward Slot 6,RewardsConfig.MiniGame[5],"x30 soft
+x1 medium","=30*$S$6+1*$S$11","x40 hard coin
+ x1 medium","=40*$T$5+1*$T$11",,,,,"x40 hard coin
+x1 booster_medium",,"=40*$T$5+1*$T$11",,,,,,,
+Mini Game Reward Slot 7,RewardsConfig.MiniGame[6],x50 soft,"=50*$S$6",x70 hard coin,"=70*$T$5",,,,,x70 hard coin,,"=70*$T$5",,,,,,,
+Mini Game Reward Slot 8,RewardsConfig.MiniGame[7],"x50 soft
+x2 cheap","=50*$S$6+2*$S$10","x70 hard coin
+ x2 cheap","=70*$T$5+2*$T$10",,,,,"x70 hard coin
+x2 booster_cheap",,"=70*$T$5+2*$T$10",,,,,,,
+Mini Game Reward Slot 9,RewardsConfig.MiniGame[8],"x30 soft
+x1 medium","=30*$S$6+1*$S$11","x40 hard coin
+ x1 medium","=40*$T$5+1*$T$11",,,,,"x40 hard coin
+x1 booster_medium",,"=40*$T$5+1*$T$11",,,,,,,
+Mini Game Reward Slot 10,RewardsConfig.MiniGame[9],"x20 soft
+x2 cheap","=20*$S$6+2*$S$10","x30 hard coin
+ x2 cheap","=30*$T$5+2*$T$10",,,,,"x30 hard coin
+x2 booster_cheap",,"=30*$T$5+2*$T$10",,,,,,,
+Treasure Search Stage 1 Reward,RewardsConfig.TreasureSearch.stages[0],"x60 soft
+x1 cheap","=60*$S$6+1*$S$10","x85 hard coin
+ x1 cheap","=85*$T$5+1*$T$10","x60 soft
+x1 cheap","=60*$S$6+1*$S$10","x85 hard coin
+ x1 cheap","=85*$T$5+1*$T$10","x1 booster_before_cheap
+x1 booster_cheap",,"=1*$T$7+1*$T$10",,,,,,,
+Treasure Search Stage 2 Reward,RewardsConfig.TreasureSearch.stages[1],"x80 soft
+x1 medium","=80*$S$6+1*$S$11","x110 hard coin
+ x1 medium","=110*$T$5+1*$T$11","x80 soft
+x1 medium","=80*$S$6+1*$S$11","x110 hard coin
+ x1 medium","=110*$T$5+1*$T$11","x1 booster_before_medium
+x1 booster_medium",,"=1*$T$8+1*$T$11",,,,,,,
+Treasure Search Stage 3 Reward,RewardsConfig.TreasureSearch.stages[2],N/A,,N/A,,"x2 cheap
+x1 expensive","=2*$S$10+1*$S$12","x2 cheap
+x1 expensive","=2*$T$10+1*$T$12","x1 booster_before_expensive
+x1 booster_expensive
+x500 hard coin",,"=1*$T$9+1*$T$12+500*$T$5",,ref Royal Match,,,,,
+Treasure Search Stage 4 Reward,RewardsConfig.TreasureSearch.stages[3],"x140 soft
+x1 cheap
+x1 medium","=140*$S$6+1*$S$10+1*$S$11","x200 hard coin
+ x1 cheap
+ x1 medium","=200*$T$5+1*$T$10+1*$T$11","x140 soft
+x1 cheap
+x1 medium","=140*$S$6+1*$S$10+1*$S$11","x200 hard coin
+ x1 cheap
+ x1 medium","=200*$T$5+1*$T$10+1*$T$11","x1 booster_cheap
+x1 booster_medium
+x1 booster_expensive",,"=1*$T$10+1*$T$11+1*$T$12",,,,,,,
+Treasure Search Stage 5 Reward,RewardsConfig.TreasureSearch.stages[4],"x160 soft
+ x100 hard ruby
+ x3 locationProgress
+ x2 cheap
+ x2 medium","=160*$S$6+100*$S$4+2*$S$10+2*$S$11","x920 hard coin
+ x3 locationProgress
+ x2 cheap
+ x2 medium","=920*$T$5+2*$T$10+2*$T$11","x160 soft
+ x100 hard ruby
+ x3 locationProgress
+ x2 cheap
+ x2 medium","=160*$S$6+100*$S$4+2*$S$10+2*$S$11","x920 hard coin
+ x3 locationProgress
+ x2 cheap
+ x2 medium","=920*$T$5+2*$T$10+2*$T$11","x1 booster_before_cheap
+x1 booster_before_medium
+x1 booster_before_expensive
+x1 booster_cheap
+x1 booster_medium
+x1 booster_expensive
+x1000 hard coin",,"=1*$T$7+1*$T$8+1*$T$9+1*$T$10+1*$T$11+1*$T$12+1000*$T$5",,ref Royal Match,,,,,
+Level Mastery Stage 1 Reward,Missions[Mission.TYPE_LEVEL_MASTERY].stages[0].prize,N/A,,N/A,,N/A,,N/A,,x1 booster_before_medium,,"=1*$T$8",,,,,,,
+Level Mastery Stage 2 Reward,Missions[Mission.TYPE_LEVEL_MASTERY].stages[1].prize,x50 soft,"=50*$S$6",x70 hard coin,"=70*$T$5",x50 soft,"=50*$S$6",x70 hard coin,"=70*$T$5",x100 hard coin,,"=100*$T$5",,,,,,,
+Level Mastery Stage 3 Reward,Missions[Mission.TYPE_LEVEL_MASTERY].stages[2].prize,x5 hard ruby,"=5*$S$4",x35 hard coin,"=35*$T$5",x5 hard ruby,"=5*$S$4",x35 hard coin,"=35*$T$5",x1 booster_before_cheap,,"=1*$T$7",,,,,,,
+Level Mastery Stage 4 Reward,Missions[Mission.TYPE_LEVEL_MASTERY].stages[3].prize,x50 soft,"=50*$S$6",x70 hard coin,"=70*$T$5",x50 soft,"=50*$S$6",x70 hard coin,"=70*$T$5",x1 booster_cheap,,"=1*$T$10",,"ref - ""x2"" feature",,,,,
+Level Mastery Stage 5 Reward,Missions[Mission.TYPE_LEVEL_MASTERY].stages[4].prize,N/A,,N/A,,N/A,,N/A,,0.5 hrs unlimited lives,,"=0.5*$T$13",,,,,,,
+Level Mastery Stage 6 Reward,Missions[Mission.TYPE_LEVEL_MASTERY].stages[5].prize,N/A,,N/A,,N/A,,N/A,,x1 booster_before_medium,,"=1*$T$8",,,,,,,
+Level Mastery Stage 7 Reward,Missions[Mission.TYPE_LEVEL_MASTERY].stages[6].prize,x10 hard ruby,"=10*$S$4",x70 hard coin,"=70*$T$5",x10 hard ruby,"=10*$S$4",x70 hard coin,"=70*$T$5",x1 booster_before_cheap,,"=1*$T$7",,,,,,,
+Level Mastery Stage 8 Reward,Missions[Mission.TYPE_LEVEL_MASTERY].stages[7].prize,x150 soft,"=150*$S$6",x210 hard coin,"=210*$T$5",x150 soft,"=150*$S$6",x210 hard coin,"=210*$T$5",x1 booster_cheap,,"=1*$T$10",,"ref - ""x2"" feature",,,,,
+Level Mastery Stage 9 Reward,Missions[Mission.TYPE_LEVEL_MASTERY].stages[8].prize,N/A,,N/A,,N/A,,N/A,,x1 booster_before_expensive,,"=1*$T$9",,,,,,,
+Level Mastery Stage 10 Reward,Missions[Mission.TYPE_LEVEL_MASTERY].stages[9].prize,x200 soft,"=200*$S$6",x280 hard coin,"=280*$T$5",x200 soft,"=200*$S$6",x280 hard coin,"=280*$T$5",x400 hard coin,,"=400*$T$5",,,,,,,
+Level Mastery Stage 11 Reward,Missions[Mission.TYPE_LEVEL_MASTERY].stages[10].prize,x200 soft,"=200*$S$6",x280 hard coin,"=280*$T$5",x200 soft,"=200*$S$6",x280 hard coin,"=280*$T$5",x1 booster_before_cheap,,"=1*$T$7",,,,,,,
+Level Mastery Stage 12 Reward,Missions[Mission.TYPE_LEVEL_MASTERY].stages[11].prize,x25 hard ruby,"=25*$S$4",x180 hard coin,"=180*$T$5",x25 hard ruby,"=25*$S$4",x180 hard coin,"=180*$T$5",x1 booster_cheap,,"=1*$T$10",,"ref - ""x2"" feature",,,,,
+Level Mastery Stage 13 Reward,Missions[Mission.TYPE_LEVEL_MASTERY].stages[12].prize,x100 soft,"=100*$S$6",x140 hard coin,"=140*$T$5",x100 soft,"=100*$S$6",x140 hard coin,"=140*$T$5","x1 booster_before_cheap
+x1 booster_before_medium
+x1 booster_before_expensive",,"=1*$T$7+1*$T$8+1*$T$9",,30 min - boosters_before (cheap),,,,,
+Level Mastery Stage 14 Reward,Missions[Mission.TYPE_LEVEL_MASTERY].stages[13].prize,N/A,,N/A,,N/A,,N/A,,x1 booster_before_medium,,"=1*$T$8",,,,,,,
+Level Mastery Stage 15 Reward,Missions[Mission.TYPE_LEVEL_MASTERY].stages[14].prize,x150 soft,"=150*$S$6",x210 hard coin,"=210*$T$5",x150 soft,"=150*$S$6",x210 hard coin,"=210*$T$5",x1 booster_before_expensive,,"=1*$T$9",,,,,,,
+Level Mastery Stage 16 Reward,Missions[Mission.TYPE_LEVEL_MASTERY].stages[15].prize,x200 soft,"=200*$S$6",x280 hard coin,"=280*$T$5",x200 soft,"=200*$S$6",x280 hard coin,"=280*$T$5",x1 booster_before_medium,,"=1*$T$8",,,,,,,
+Level Mastery Stage 17 Reward,Missions[Mission.TYPE_LEVEL_MASTERY].stages[16].prize,N/A,,N/A,,N/A,,N/A,,x1 booster_cheap,,"=1*$T$10",,"ref - ""x2"" feature",,,,,
+Level Mastery Stage 18 Reward,Missions[Mission.TYPE_LEVEL_MASTERY].stages[17].prize,N/A,,N/A,,N/A,,N/A,,x1 booster_before_cheap,,"=1*$T$7",,,,,,,
+Level Mastery Stage 19 Reward,Missions[Mission.TYPE_LEVEL_MASTERY].stages[18].prize,x75 hard ruby,"=75*$S$4",x530 hard coin,"=530*$T$5",x75 hard ruby,"=75*$S$4",x530 hard coin,"=530*$T$5",x1000 hard coin,,"=1000*$T$5",,,,,,,
+Level Mastery Stage 20 Reward,Missions[Mission.TYPE_LEVEL_MASTERY].stages[19].prize,x100 soft,"=100*$S$6",x140 hard coin,"=140*$T$5",x100 soft,"=100*$S$6",x140 hard coin,"=140*$T$5",x1 booster_cheap,,"=1*$T$10",,"ref - ""x2"" feature",,,,,
+Level Mastery Stage 21 Reward,Missions[Mission.TYPE_LEVEL_MASTERY].stages[20].prize,N/A,,N/A,,N/A,,N/A,,x1 booster_before_expensive,,"=1*$T$9",,,,,,,
+Level Mastery Stage 22 Reward,Missions[Mission.TYPE_LEVEL_MASTERY].stages[21].prize,N/A,,N/A,,N/A,,N/A,,x1 booster_before_expensive,,"=1*$T$9",,,,,,,
+Level Mastery Stage 23 Reward,Missions[Mission.TYPE_LEVEL_MASTERY].stages[22].prize,N/A,,N/A,,N/A,,N/A,,"x1 booster_before_cheap
+x1 booster_before_medium
+x1 booster_before_expensive",,"=1*$T$7+1*$T$8+1*$T$9",,30 min - boosters_before (medium),,,,,
+Level Mastery Stage 24 Reward,Missions[Mission.TYPE_LEVEL_MASTERY].stages[23].prize,N/A,,N/A,,N/A,,N/A,,"x2 booster_cheap
+x2 booster_medium
+2 hrs unlimited lives
+x1 booster_expensive",,"=2*$T$10+2*$T$11+2*$T$13+1*$T$12",,15 min booster_before (medium),,,,,
+Level Mastery Stage 25 Reward,Missions[Mission.TYPE_LEVEL_MASTERY].stages[24].prize,x200 hard ruby,"=200*$S$4",x1400 hard coin,"=1400*$T$5",x200 hard ruby,"=200*$S$4",x1400 hard coin,"=1400*$T$5",x10000 hard coin,,"=10000*$T$5",,,,,,,
+,,,,,,,,,,,,,,,,,,,
+Weekly Goals Login Days Day 0 Reward,WeeklyGoalsLevelsConfig[WeeklyGoalsLevelsTypes.LOGIN_DAYS].reward(0),"x1 cheap
+x10 soft","=1*$S$10+10*$S$6","x1 cheap
+x15 hard coin","=1*$T$10+15*$T$5","x1 cheap
+x10 soft","=1*$S$10+10*$S$6",N/A,,"x1 cheap
+x15 hard coin",,"=1*$T$10+15*$T$5",,,,,,,
+Weekly Goals Login Days Day 1 Reward,WeeklyGoalsLevelsConfig[WeeklyGoalsLevelsTypes.LOGIN_DAYS].reward(1),x10 locationProgress,,x10 locationProgress,,x10 locationProgress,,N/A,,x10 locationProgress,,,,,,,,,
+Weekly Goals Login Days Day 2 Reward,WeeklyGoalsLevelsConfig[WeeklyGoalsLevelsTypes.LOGIN_DAYS].reward(2),x10 locationProgress,,x10 locationProgress,,x10 locationProgress,,N/A,,x10 locationProgress,,,,,,,,,
+Weekly Goals Login Days Day 3 Reward,WeeklyGoalsLevelsConfig[WeeklyGoalsLevelsTypes.LOGIN_DAYS].reward(3),x20 locationProgress,,x20 locationProgress,,x20 locationProgress,,N/A,,x20 locationProgress,,,,,,,,,
+Weekly Goals Login Days Day 4 Reward,WeeklyGoalsLevelsConfig[WeeklyGoalsLevelsTypes.LOGIN_DAYS].reward(4),x20 locationProgress,,x20 locationProgress,,x20 locationProgress,,N/A,,x20 locationProgress,,,,,,,,,
+Weekly Goals Login Days Day 5 Reward,WeeklyGoalsLevelsConfig[WeeklyGoalsLevelsTypes.LOGIN_DAYS].reward(5),x20 locationProgress,,x20 locationProgress,,x20 locationProgress,,N/A,,x20 locationProgress,,,,,,,,,
+Weekly Goals Login Days Day 6 Reward,WeeklyGoalsLevelsConfig[WeeklyGoalsLevelsTypes.LOGIN_DAYS].reward(6),x1 medium,"=1*$S$11",x1 medium,"=1*$T$11",x1 medium,"=1*$S$11",N/A,,x1 medium,,"=1*$T$11",,,,,,,
+Weekly Goals Use Shovel Day 0 Reward,WeeklyGoalsLevelsConfig[WeeklyGoalsLevelsTypes.USE_SHOVEL].reward(0),"x1 cheap
+x10 soft","=1*$S$10+10*$S$6","x1 cheap
+x15 hard coin","=1*$T$10+15*$T$5","x1 cheap
+x10 soft","=1*$S$10+10*$S$6",N/A,,"x1 cheap
+x15 hard coin",,"=1*$T$10+15*$T$5",,,,,,,
+Weekly Goals Use Shovel Day 1 Reward,WeeklyGoalsLevelsConfig[WeeklyGoalsLevelsTypes.USE_SHOVEL].reward(1),x1 cheap,"=1*$S$10",x1 cheap,"=1*$T$10",x1 cheap,"=1*$S$10",N/A,,x1 cheap,,"=1*$T$10",,,,,,,
+Weekly Goals Use Shovel Day 2 Reward,WeeklyGoalsLevelsConfig[WeeklyGoalsLevelsTypes.USE_SHOVEL].reward(2),"x2 cheap
+x10 soft","=2*$S$10+10*$S$6","x2 cheap
+x15 hard coin","=2*$T$10+15*$T$5","x2 cheap
+x10 soft","=2*$S$10+10*$S$6",N/A,,"x2 cheap
+x15 hard coin",,"=2*$T$10+15*$T$5",,,,,,,
+Weekly Goals Use Shovel Day 3 Reward,WeeklyGoalsLevelsConfig[WeeklyGoalsLevelsTypes.USE_SHOVEL].reward(3),x1 medium,"=1*$S$11",x1 medium,"=1*$T$11",x1 medium,"=1*$S$11",N/A,,x1 medium,,"=1*$T$11",,,,,,,
+Weekly Goals Use Shovel Day 4 Reward,WeeklyGoalsLevelsConfig[WeeklyGoalsLevelsTypes.USE_SHOVEL].reward(4),"x2 cheap
+x20 soft","=2*$S$10+20*$S$6","x2 cheap
+x30 hard coin","=2*$T$10+30*$T$5","x2 cheap
+x20 soft","=2*$S$10+20*$S$6",N/A,,"x2 cheap
+x30 hard coin",,"=2*$T$10+30*$T$5",,,,,,,
+Weekly Goals Use Shovel Day 5 Reward,WeeklyGoalsLevelsConfig[WeeklyGoalsLevelsTypes.USE_SHOVEL].reward(5),x1 medium,"=1*$S$11",x1 medium,"=1*$T$11",x1 medium,"=1*$S$11",N/A,,x1 medium,,"=1*$T$11",,,,,,,
+Weekly Goals Use Shovel Day 6 Reward,WeeklyGoalsLevelsConfig[WeeklyGoalsLevelsTypes.USE_SHOVEL].reward(6),"x3 cheap
+x30 soft","=3*$S$10+30*$S$6","x3 cheap
+x40 hard coin","=3*$T$10+40*$T$5","x3 cheap
+x30 soft","=3*$S$10+30*$S$6",N/A,,"x3 cheap
+x40 hard coin",,"=3*$T$10+40*$T$5",,,,,,,
+Weekly Goals Spend Hard Day 0 Reward,WeeklyGoalsLevelsConfig[WeeklyGoalsLevelsTypes.SPEND_HARD].reward(0),x1 cheap,"=1*$S$10",x1 cheap,"=1*$T$10",x1 cheap,"=1*$S$10",N/A,,x1 cheap,,"=1*$T$10",,,,,,,
+Weekly Goals Spend Hard Day 1 Reward,WeeklyGoalsLevelsConfig[WeeklyGoalsLevelsTypes.SPEND_HARD].reward(1),"x1 cheap
+x10 soft","=1*$S$10+10*$S$6","x1 cheap
+x15 hard coin","=1*$T$10+15*$T$5","x1 cheap
+x10 soft","=1*$S$10+10*$S$6",N/A,,"x1 cheap
+x15 hard coin",,"=1*$T$10+15*$T$5",,,,,,,
+Weekly Goals Spend Hard Day 2 Reward,WeeklyGoalsLevelsConfig[WeeklyGoalsLevelsTypes.SPEND_HARD].reward(2),x1 cheap,"=1*$S$10",x1 cheap,"=1*$T$10",x1 cheap,"=1*$S$10",N/A,,x1 cheap,,"=1*$T$10",,,,,,,
+Weekly Goals Spend Hard Day 3 Reward,WeeklyGoalsLevelsConfig[WeeklyGoalsLevelsTypes.SPEND_HARD].reward(3),"x2 cheap
+x10 soft","=2*$S$10+10*$S$6","x2 cheap
+x15 hard coin","=2*$T$10+15*$T$5","x2 cheap
+x10 soft","=2*$S$10+10*$S$6",N/A,,"x2 cheap
+x15 hard coin",,"=2*$T$10+15*$T$5",,,,,,,
+Weekly Goals Spend Hard Day 4 Reward,WeeklyGoalsLevelsConfig[WeeklyGoalsLevelsTypes.SPEND_HARD].reward(4),x1 medium,"=1*$S$11",x1 medium,"=1*$T$11",x1 medium,"=1*$S$11",N/A,,x1 medium,,"=1*$T$11",,,,,,,
+Weekly Goals Spend Hard Day 5 Reward,WeeklyGoalsLevelsConfig[WeeklyGoalsLevelsTypes.SPEND_HARD].reward(5),"x2 cheap
+x20 soft","=2*$S$10+20*$S$6","x2 cheap
+x30 hard coin","=2*$T$10+30*$T$5","x2 cheap
+x20 soft","=2*$S$10+20*$S$6",N/A,,"x2 cheap
+x30 hard coin",,"=2*$T$10+30*$T$5",,,,,,,
+Weekly Goals Spend Hard Day 6 Reward,WeeklyGoalsLevelsConfig[WeeklyGoalsLevelsTypes.SPEND_HARD].reward(6),x1 medium,"=1*$S$11",x1 medium,"=1*$T$11",x1 medium,"=1*$S$11",N/A,,x1 medium,,"=1*$T$11",,,,,,,
+Weekly Goals Pass Hard Level Day 0 Reward,WeeklyGoalsLevelsConfig[WeeklyGoalsLevelsTypes.PASS_HARD_LEVEL].reward(0),"x1 cheap
+x10 soft","=1*$S$10+10*$S$6","x1 cheap
+x15 hard coin","=1*$T$10+15*$T$5","x1 cheap
+x10 soft","=1*$S$10+10*$S$6",N/A,,"x1 cheap
+x15 hard coin",,"=1*$T$10+15*$T$5",,,,,,,
+Weekly Goals Pass Hard Level Day 1 Reward,WeeklyGoalsLevelsConfig[WeeklyGoalsLevelsTypes.PASS_HARD_LEVEL].reward(1),"x1 cheap
+x10 soft","=1*$S$10+10*$S$6","x1 cheap
+x15 hard coin","=1*$T$10+15*$T$5","x1 cheap
+x10 soft","=1*$S$10+10*$S$6",N/A,,"x1 cheap
+x15 hard coin",,"=1*$T$10+15*$T$5",,,,,,,
+Weekly Goals Pass Hard Level Day 2 Reward,WeeklyGoalsLevelsConfig[WeeklyGoalsLevelsTypes.PASS_HARD_LEVEL].reward(2),"x2 cheap
+x10 soft","=2*$S$10+10*$S$6","x2 cheap
+x15 hard coin","=2*$T$10+15*$T$5","x2 cheap
+x10 soft","=2*$S$10+10*$S$6",N/A,,"x2 cheap
+x15 hard coin",,"=2*$T$10+15*$T$5",,,,,,,
+Weekly Goals Pass Hard Level Day 3 Reward,WeeklyGoalsLevelsConfig[WeeklyGoalsLevelsTypes.PASS_HARD_LEVEL].reward(3),"x2 cheap
+x20 soft","=2*$S$10+20*$S$6","x2 cheap
+x30 hard coin","=2*$T$10+30*$T$5","x2 cheap
+x20 soft","=2*$S$10+20*$S$6",N/A,,"x2 cheap
+x30 hard coin",,"=2*$T$10+30*$T$5",,,,,,,
+Weekly Goals Pass Hard Level Day 4 Reward,WeeklyGoalsLevelsConfig[WeeklyGoalsLevelsTypes.PASS_HARD_LEVEL].reward(4),"x2 cheap
+x20 soft","=2*$S$10+20*$S$6","x2 cheap
+x30 hard coin","=2*$T$10+30*$T$5","x2 cheap
+x20 soft","=2*$S$10+20*$S$6",N/A,,"x2 cheap
+x30 hard coin",,"=2*$T$10+30*$T$5",,,,,,,
+Weekly Goals Pass Hard Level Day 5 Reward,WeeklyGoalsLevelsConfig[WeeklyGoalsLevelsTypes.PASS_HARD_LEVEL].reward(5),"x3 cheap
+x30 soft","=3*$S$10+30*$S$6","x3 cheap
+x40 hard coin","=3*$T$10+40*$T$5","x3 cheap
+x30 soft","=3*$S$10+30*$S$6",N/A,,"x3 cheap
+x40 hard coin",,"=3*$T$10+40*$T$5",,,,,,,
+Weekly Goals Pass Hard Level Day 6 Reward,WeeklyGoalsLevelsConfig[WeeklyGoalsLevelsTypes.PASS_HARD_LEVEL].reward(6),"x3 cheap
+x40 soft","=3*$S$10+40*$S$6","x3 cheap
+x55 hard coin","=3*$T$10+55*$T$5","x3 cheap
+x40 soft","=3*$S$10+40*$S$6",N/A,,"x3 cheap
+x55 hard coin",,"=3*$T$10+55*$T$5",,,,,,,
+Weekly Goals Pass Level Day 0 Reward,WeeklyGoalsLevelsConfig[WeeklyGoalsLevelsTypes.PASS_LEVEL].reward(0),x1 cheap,"=1*$S$10",x1 cheap,"=1*$T$10",x1 cheap,"=1*$S$10",N/A,,x1 cheap,,"=1*$T$10",,,,,,,
+Weekly Goals Pass Level Day 1 Reward,WeeklyGoalsLevelsConfig[WeeklyGoalsLevelsTypes.PASS_LEVEL].reward(1),x1 cheap,"=1*$S$10",x1 cheap,"=1*$T$10",x1 cheap,"=1*$S$10",N/A,,x1 cheap,,"=1*$T$10",,,,,,,
+Weekly Goals Pass Level Day 2 Reward,WeeklyGoalsLevelsConfig[WeeklyGoalsLevelsTypes.PASS_LEVEL].reward(2),"x1 cheap
+x10 soft","=1*$S$10+10*$S$6","x1 cheap
+x15 hard coin","=1*$T$10+15*$T$5","x1 cheap
+x10 soft","=1*$S$10+10*$S$6",N/A,,"x1 cheap
+x15 hard coin",,"=1*$T$10+15*$T$5",,,,,,,
+Weekly Goals Pass Level Day 3 Reward,WeeklyGoalsLevelsConfig[WeeklyGoalsLevelsTypes.PASS_LEVEL].reward(3),"x1 cheap
+x10 soft","=1*$S$10+10*$S$6","x1 cheap
+x15 hard coin","=1*$T$10+15*$T$5","x1 cheap
+x10 soft","=1*$S$10+10*$S$6",N/A,,"x1 cheap
+x15 hard coin",,"=1*$T$10+15*$T$5",,,,,,,
+Weekly Goals Pass Level Day 4 Reward,WeeklyGoalsLevelsConfig[WeeklyGoalsLevelsTypes.PASS_LEVEL].reward(4),"x2 cheap
+x10 soft","=2*$S$10+10*$S$6","x2 cheap
+x15 hard coin","=2*$T$10+15*$T$5","x2 cheap
+x10 soft","=2*$S$10+10*$S$6",N/A,,"x2 cheap
+x15 hard coin",,"=2*$T$10+15*$T$5",,,,,,,
+Weekly Goals Pass Level Day 5 Reward,WeeklyGoalsLevelsConfig[WeeklyGoalsLevelsTypes.PASS_LEVEL].reward(5),"x2 cheap
+x20 soft","=2*$S$10+20*$S$6","x2 cheap
+x30 hard coin","=2*$T$10+30*$T$5","x2 cheap
+x20 soft","=2*$S$10+20*$S$6",N/A,,"x2 cheap
+x30 hard coin",,"=2*$T$10+30*$T$5",,,,,,,
+Weekly Goals Pass Level Day 6 Reward,WeeklyGoalsLevelsConfig[WeeklyGoalsLevelsTypes.PASS_LEVEL].reward(6),"x2 cheap
+x30 soft","=2*$S$10+30*$S$6","x2 cheap
+x40 hard coin","=2*$T$10+40*$T$5","x2 cheap
+x30 soft","=2*$S$10+30*$S$6",N/A,,"x2 cheap
+x40 hard coin",,"=2*$T$10+40*$T$5",,,,,,,
+Weekly Goals Points Reward 1,RewardsConfig.WeeklyGoalPointsRewards[0],x1 cheap,"=1*$S$10",x1 cheap,"=1*$T$10",x1 cheap,"=1*$S$10",N/A,,x1 cheap,,"=1*$T$10",,,,,,,
+Weekly Goals Points Reward 2,RewardsConfig.WeeklyGoalPointsRewards[1],x140 hard ruby,"=140*$S$4",x140 hard coin,"=140*$T$5",x140 hard ruby,"=140*$S$4",N/A,,x140 hard coin,,"=140*$T$5",,,,,,,
+Weekly Goals Points Reward 3,RewardsConfig.WeeklyGoalPointsRewards[2],x2 cheap,"=2*$S$10",x2 cheap,"=2*$T$10",x2 cheap,"=2*$S$10",N/A,,x2 cheap,,"=2*$T$10",,,,,,,
+Weekly Goals Points Reward 4,RewardsConfig.WeeklyGoalPointsRewards[3],x210 hard ruby,"=210*$S$4",x210 hard coin,"=210*$T$5",x210 hard ruby,"=210*$S$4",N/A,,x210 hard coin,,"=210*$T$5",,,,,,,
+Weekly Goals Points Reward 5,RewardsConfig.WeeklyGoalPointsRewards[4],"x1 cheap
+x1 medium
+x1 medium","=1*$S$10+1*$S$11+1*$S$11",x1 cheap,"=1*$T$10","x1 cheap
+x1 medium
+x1 medium","=1*$S$10+1*$S$11+1*$S$11",N/A,,x1 cheap,,"=1*$T$10",,,,,,,
+Kit 1,Products.kit1.restoreReward,x100 hard coin,"=100*$S$5",x700 hard coin,"=700*$T$5",x100 hard coin,"=100*$S$5",x700 hard coin,"=700*$T$5",x700 hard coin,,"=700*$T$5",,kit (default in cleverapps),,,,,
+Kit 3,Products.kit3.restoreReward,x300 hard coin,"=300*$S$5",x2100 hard coin,"=2100*$T$5",x300 hard coin,"=300*$S$5",x2100 hard coin,"=2100*$T$5",x2100 hard coin,,"=2100*$T$5",,kit (default in cleverapps),,,,,
+Kit 10,Products.kit10.restoreReward,x1000 hard coin,"=1000*$S$5",x7000 hard coin,"=7000*$T$5",x1000 hard coin,"=1000*$S$5",x7000 hard coin,"=7000*$T$5",x7000 hard coin,,"=7000*$T$5",,kit (default in cleverapps),,,,,
+Kit 50,Products.kit50.restoreReward,x5000 hard coin,"=5000*$S$5",x35000 hard coin,"=35000*$T$5",x5000 hard coin,"=5000*$S$5",x35000 hard coin,"=35000*$T$5",x35000 hard coin,,"=35000*$T$5",,kit (default in cleverapps),,,,,
+Rewarded Video Click 1,RewardedVideoToolbarItem.REWARDS[0],x10 hard coin,"=10*$S$5",x15 hard coin,"=15*$T$5",x10 hard coin,"=10*$S$5",x15 hard coin,"=15*$T$5",x15 hard coin,,"=15*$T$5",,1st-click reward,,,,,
+Rewarded Video Click 2,RewardedVideoToolbarItem.REWARDS[1],x5 hard coin,"=5*$S$5",x7 hard coin,"=7*$T$5",x5 hard coin,"=5*$S$5",x7 hard coin,"=7*$T$5",x7 hard coin,,"=7*$T$5",,2nd-click reward,,,,,
+Rewarded Video Click 3+,RewardedVideoToolbarItem.REWARDS[2],x2 hard coin,"=2*$S$5",x3 hard coin,"=3*$T$5",x2 hard coin,"=2*$S$5",x3 hard coin,"=3*$T$5",x3 hard coin,,"=3*$T$5",,3rd-click+ reward,,,,,
+Hard For Video Reward,VirtualProducts.hardForVideo.reward,x10 hard coin,"=10*$S$5","x[7,21] hard coin","=7*$T$5&"" - ""&21*$T$5",x10 hard coin,"=10*$S$5","x[7,21] hard coin","=7*$T$5&"" - ""&21*$T$5","x[7,21] hard coin",,"=7*$T$5&"" - ""&21*$T$5",,random range per click,,,,,
+PiggyBank Level 0,PiggyBankMissionLogic.BASE_AMOUNTS[0],x500 hard coin,"=500*$S$5",x3500 hard coin,"=3500*$T$5",x500 soft,"=500*$S$6",x3500 hard coin,"=3500*$T$5",x700 hard coin,,"=700*$T$5",,piggy goal not Royal-Match-aligned,,,,,
+PiggyBank Level 1,PiggyBankMissionLogic.BASE_AMOUNTS[1],x1800 hard coin,"=1800*$S$5",x12600 hard coin,"=12600*$T$5",x1800 soft,"=1800*$S$6",x12600 hard coin,"=12600*$T$5",x2500 hard coin,,"=2500*$T$5",,,,,,,
+PiggyBank Level 2,PiggyBankMissionLogic.BASE_AMOUNTS[2],x6000 hard coin,"=6000*$S$5",x42000 hard coin,"=42000*$T$5",x6000 soft,"=6000*$S$6",x42000 hard coin,"=42000*$T$5",x8400 hard coin,,"=8400*$T$5",,,,,,,
+PiggyBank Level 3,PiggyBankMissionLogic.BASE_AMOUNTS[3],x25000 hard coin,"=25000*$S$5",x175000 hard coin,"=175000*$T$5",x25000 soft,"=25000*$S$6",x175000 hard coin,"=175000*$T$5",x35000 hard coin,,"=35000*$T$5",,,,,,,
+Octopus Start Reward 1,OctopusHunt.START_REWARD_POOL[0],x10 soft,"=10*$S$6",x14 hard coin,"=14*$T$5",x10 soft,"=10*$S$6",x14 hard coin,"=14*$T$5",x15 hard coin,,"=15*$T$5",,,,,,,
+Octopus Start Reward 2,OctopusHunt.START_REWARD_POOL[1],x1 lives,,x1 lives,,x1 lives,,x1 lives,,x1 lives,,,,,,,,,
+Octopus Start Reward 3,OctopusHunt.START_REWARD_POOL[2],1 hr unlimited lives,"=1*$S$13",1 hr unlimited lives,"=1*$T$13",1 hr unlimited lives,"=1*$S$13",1 hr unlimited lives,"=1*$T$13",1 hr unlimited lives,probability 3,"=1*$T$13",,,,,,,
+Octopus Start Reward 4,OctopusHunt.START_REWARD_POOL[3],x5 soft,"=5*$S$6",x7 hard coin,"=7*$T$5",x5 soft,"=5*$S$6",x7 hard coin,"=7*$T$5",x10 hard coin,probability 3,"=10*$T$5",,,,,,,
+Octopus Reward 1,OctopusHunt.REWARD_POOL[0],x10 soft,"=10*$S$6",x14 hard coin,"=14*$T$5",x10 soft,"=10*$S$6",x14 hard coin,"=14*$T$5",x15 hard coin,,"=15*$T$5",,,,,,,
+Octopus Reward 2,OctopusHunt.REWARD_POOL[1],x25 soft,"=25*$S$6",x35 hard coin,"=35*$T$5",x25 soft,"=25*$S$6",x35 hard coin,"=35*$T$5",x40 hard coin,,"=40*$T$5",,,,,,,
+Octopus Reward 3,OctopusHunt.REWARD_POOL[2],x50 soft,"=50*$S$6",x70 hard coin,"=70*$T$5",x50 soft,"=50*$S$6",x70 hard coin,"=70*$T$5",x75 hard coin,,"=75*$T$5",,,,,,,
+Octopus Reward 4,OctopusHunt.REWARD_POOL[3],x75 soft,"=75*$S$6",x105 hard coin,"=105*$T$5",x75 soft,"=75*$S$6",x105 hard coin,"=105*$T$5",x100 hard coin,,"=100*$T$5",,,,,,,
+Octopus Reward 5,OctopusHunt.REWARD_POOL[4],x100 soft,"=100*$S$6",x140 hard coin,"=140*$T$5",x100 soft,"=100*$S$6",x140 hard coin,"=140*$T$5",x150 hard coin,,"=150*$T$5",,,,,,,
+Octopus Reward 6,OctopusHunt.REWARD_POOL[5],x1 lives,,x1 lives,,x1 lives,,x1 lives,,x1 lives,probability 3,,,,,,,,
+Octopus Reward 7,OctopusHunt.REWARD_POOL[6],1 hr unlimited lives,"=1*$S$13",1 hr unlimited lives,"=1*$T$13",1 hr unlimited lives,"=1*$S$13",1 hr unlimited lives,"=1*$T$13",1 hr unlimited lives,probability 3,"=1*$T$13",,,,,,,
+Octopus Reward 8,OctopusHunt.REWARD_POOL[7],3 hrs unlimited lives,"=3*$S$13",3 hrs unlimited lives,"=3*$T$13",3 hrs unlimited lives,"=3*$S$13",3 hrs unlimited lives,"=3*$T$13",3 hrs unlimited lives,probability 3,"=3*$T$13",,,,,,,
+Octopus Reward 9,OctopusHunt.REWARD_POOL[8],6 hrs unlimited lives,"=6*$S$13",6 hrs unlimited lives,"=6*$T$13",6 hrs unlimited lives,"=6*$S$13",6 hrs unlimited lives,"=6*$T$13",6 hrs unlimited lives,,"=6*$T$13",,,,,,,
+Octopus Reward 10,OctopusHunt.REWARD_POOL[9],x1 cheap,"=1*$S$10",x1 cheap,"=1*$T$10",x1 cheap,"=1*$S$10",x1 cheap,"=1*$T$10",x1 cheap,probability 4,"=1*$T$10",,,,,,,
+Octopus Reward 11,OctopusHunt.REWARD_POOL[10],x1 medium,"=1*$S$11",x1 medium,"=1*$T$11",x1 medium,"=1*$S$11",x1 medium,"=1*$T$11",x1 medium,probability 4,"=1*$T$11",,,,,,,
+Octopus Reward 12,OctopusHunt.REWARD_POOL[11],x1 expensive,"=1*$S$12",x1 expensive,"=1*$T$12",x1 expensive,"=1*$S$12",x1 expensive,"=1*$T$12",x1 expensive,probability 2,"=1*$T$12",,,,,,,
+Octopus Prolongation Price,OctopusHunt.PROLONGATION_PRICE,x100 hard coin,"=100*$S$5",x700 hard coin,"=700*$T$5",x100 hard coin,"=100*$S$5",x700 hard coin,"=700*$T$5",x750 hard coin,,"=750*$T$5",,,,,,,
+Promotion Sale Tile 1,RewardsConfig.PromotionSale[0],N/A,,N/A,,N/A,,N/A,,"hardPrice 10000
+x3850 hard coin
+x7 expensive
+profit 150%",,"=3850*$T$5+7*$T$12",,offer for 10000 hard,,,,,
+Promotion Sale Tile 2,RewardsConfig.PromotionSale[1],N/A,,N/A,,N/A,,N/A,,"hardPrice 3000
+x7000 hard coin
+x10 medium
+profit 300%",,"=7000*$T$5+10*$T$11",,offer for 3000 hard,,,,,
+Supplies Hard Price,RewardsConfig.Supplies.hardPrice,N/A,,N/A,,N/A,,N/A,,x10000 hard coin,,"=10000*$T$5",,,,,,,
+Supplies Stage 1,RewardsConfig.Supplies.rewards[0],N/A,,N/A,,N/A,,N/A,,"x1 cheap
+x1 medium
+3 hrs unlimited lives",,"=1*$T$10+1*$T$11+3*$T$13",,,,,,,
+Supplies Stage 2,RewardsConfig.Supplies.rewards[1],N/A,,N/A,,N/A,,N/A,,"x200 hard coin
+x2 medium
+x1 expensive",,"=200*$T$5+2*$T$11+1*$T$12",,note: still uses soft,,,,,
+Supplies Stage 3,RewardsConfig.Supplies.rewards[2],N/A,,N/A,,N/A,,N/A,,"x700 hard coin
+x3 cheap
+x1 expensive",,"=700*$T$5+3*$T$10+1*$T$12",,,,,,,
+Supplies Stage 4,RewardsConfig.Supplies.rewards[3],N/A,,N/A,,N/A,,N/A,,"3 hrs unlimited lives
+x2 medium
+x1 expensive",,"=3*$T$13+2*$T$11+1*$T$12",,,,,,,
+Supplies Stage 5,RewardsConfig.Supplies.rewards[4],N/A,,N/A,,N/A,,N/A,,"6 hrs unlimited lives
+x2 cheap
+x1 medium",,"=6*$T$13+2*$T$10+1*$T$11",,,,,,,
+Supplies Stage 6,RewardsConfig.Supplies.rewards[5],N/A,,N/A,,N/A,,N/A,,"6 hrs unlimited lives
+x3 medium
+x2 expensive",,"=6*$T$13+3*$T$11+2*$T$12",,,,,,,
+Supplies Stage 7,RewardsConfig.Supplies.rewards[6],N/A,,N/A,,N/A,,N/A,,"x3850 hard coin
+x3 medium
+x3 expensive",,"=3850*$T$5+3*$T$11+3*$T$12",,,,,,,
+ChainSale Stage 1,RewardsConfig.ChainSale[0],N/A,,N/A,,N/A,,N/A,,x420 hard coin,,"=420*$T$5",,,,,,,
+ChainSale Stage 2,RewardsConfig.ChainSale[1],N/A,,N/A,,N/A,,N/A,,"x1 cheap
+x1 medium",,"=1*$T$10+1*$T$11",,,,,,,
+ChainSale Stage 3,RewardsConfig.ChainSale[2],N/A,,N/A,,N/A,,N/A,,"hardPrice 3000
+x420 hard coin
+x3 cheap
+x3 expensive",,"=420*$T$5+3*$T$10+3*$T$12",,,,,,,
+ChainSale Stage 4,RewardsConfig.ChainSale[3],N/A,,N/A,,N/A,,N/A,,"x140 hard coin
+x1 medium
+x1 expensive",,"=140*$T$5+1*$T$11+1*$T$12",,,,,,,
+ChainSale Stage 5,RewardsConfig.ChainSale[4],N/A,,N/A,,N/A,,N/A,,"x210 hard coin
+x3 medium
+x1 cheap",,"=210*$T$5+3*$T$11+1*$T$10",,,,,,,
+ChainSale Stage 6,RewardsConfig.ChainSale[5],N/A,,N/A,,N/A,,N/A,,"hardPrice 10000
+x2800 hard coin
+x5 expensive
+x5 medium",,"=2800*$T$5+5*$T$12+5*$T$11",,,,,,,
+ChainSale Stage 7,RewardsConfig.ChainSale[6],N/A,,N/A,,N/A,,N/A,,"x1400 hard coin
+x3 lives",,"=1400*$T$5",,lives not priced,,,,,
+ChainSale Stage 8,RewardsConfig.ChainSale[7],N/A,,N/A,,N/A,,N/A,,"x3 medium
+x2 cheap
+x1 expensive",,"=3*$T$11+2*$T$10+1*$T$12",,,,,,,
+Tournament 1st Place,RewardsConfig.Tournament.places[0],N/A,,N/A,,N/A,,N/A,,"x2 cheap
+x2 medium
+x2 expensive",,"=2*$T$10+2*$T$11+2*$T$12",,,,,,,
+Tournament 2nd Place,RewardsConfig.Tournament.places[1],N/A,,N/A,,N/A,,N/A,,"x2 medium
+x2 expensive",,"=2*$T$11+2*$T$12",,,,,,,
+Tournament 3rd Place,RewardsConfig.Tournament.places[2],N/A,,N/A,,N/A,,N/A,,"x1 cheap
+x1 medium
+x1 expensive",,"=1*$T$10+1*$T$11+1*$T$12",,,,,,,
+Tournament 4th Place,RewardsConfig.Tournament.places[3],N/A,,N/A,,N/A,,N/A,,"x1 medium
+x1 expensive",,"=1*$T$11+1*$T$12",,,,,,,
+Tournament 5th Place,RewardsConfig.Tournament.places[4],N/A,,N/A,,N/A,,N/A,,"x1 cheap
+x1 medium",,"=1*$T$10+1*$T$11",,,,,,,
+StickersBook Reward 1,RewardsConfig.StickersBook[0],N/A,,N/A,,N/A,,N/A,,x1 cheap,,"=1*$T$10",,,,,,,
+StickersBook Reward 2,RewardsConfig.StickersBook[1],N/A,,N/A,,N/A,,N/A,,x1 medium,,"=1*$T$11",,,,,,,
+StickersBook Reward 3,RewardsConfig.StickersBook[2],N/A,,N/A,,N/A,,N/A,,x350 hard coin,,"=350*$T$5",,,,,,,
+StickersBook Reward 4,RewardsConfig.StickersBook[3],N/A,,N/A,,N/A,,N/A,,"x1 cheap
+x1 medium",,"=1*$T$10+1*$T$11",,,,,,,
+StickersBook Reward 5,RewardsConfig.StickersBook[4],N/A,,N/A,,N/A,,N/A,,"x2 cheap
+x2 medium",,"=2*$T$10+2*$T$11",,,,,,,
+StickersBook Reward 6,RewardsConfig.StickersBook[5],N/A,,N/A,,N/A,,N/A,,x420 hard coin,,"=420*$T$5",,,,,,,
+StickersBook Reward 7,RewardsConfig.StickersBook[6],N/A,,N/A,,N/A,,N/A,,x1 expensive,,"=1*$T$12",,,,,,,
+StickersBook Reward 8,RewardsConfig.StickersBook[7],N/A,,N/A,,N/A,,N/A,,"x2 medium
+x1 expensive",,"=2*$T$11+1*$T$12",,,,,,,
+StickersBook Reward 9,RewardsConfig.StickersBook[8],N/A,,N/A,,N/A,,N/A,,"x1 cheap
+x2 expensive",,"=1*$T$10+2*$T$12",,,,,,,
+StickersBook Reward 10,RewardsConfig.StickersBook[9],N/A,,N/A,,N/A,,N/A,,x700 hard coin,,"=700*$T$5",,,,,,,
+Booster Offer Reward,RewardsConfig.BoosterOffer,N/A,,N/A,,N/A,,N/A,,x10 expensive,,"=10*$T$12",,,,,,,
+MiniGame Beginner Slot 1,RewardsConfig.MiniGameBeginner[0],N/A,,N/A,,N/A,,N/A,,x75 hard coin,,"=75*$T$5",,,,,,,
+MiniGame Beginner Slot 2,RewardsConfig.MiniGameBeginner[1],N/A,,N/A,,N/A,,N/A,,x50 hard coin,,"=50*$T$5",,,,,,,
+MiniGame Beginner Slot 3,RewardsConfig.MiniGameBeginner[2],N/A,,N/A,,N/A,,N/A,,x30 hard coin,,"=30*$T$5",,,,,,,
+MiniGame Beginner Slot 4,RewardsConfig.MiniGameBeginner[3],N/A,,N/A,,N/A,,N/A,,x60 hard coin,,"=60*$T$5",,,,,,,
+MiniGame Beginner Slot 5,RewardsConfig.MiniGameBeginner[4],N/A,,N/A,,N/A,,N/A,,x100 hard coin,,"=100*$T$5",,,,,,,
+Weekly Tournament 1st Place,RewardsConfig.Weekly_Tournament[0],N/A,,N/A,,N/A,,N/A,,"3 hrs unlimited lives
+x1 cheap",,"=3*$T$13+1*$T$10",,,,,,,
+Weekly Tournament 2nd Place,RewardsConfig.Weekly_Tournament[1],N/A,,N/A,,N/A,,N/A,,"x70 hard coin
+x1 medium",,"=70*$T$5+1*$T$11",,,,,,,
+Weekly Tournament 3rd Place,RewardsConfig.Weekly_Tournament[2],N/A,,N/A,,N/A,,N/A,,"x10 hard coin
+x1 cheap
+x1 medium",,"=10*$T$5+1*$T$10+1*$T$11",,,,,,,
+Weekly Tournament 4th Place,RewardsConfig.Weekly_Tournament[3],N/A,,N/A,,N/A,,N/A,,"x210 hard coin
+24 hrs unlimited lives
+x1 cheap",,"=210*$T$5+24*$T$13+1*$T$10",,,,,,,
+Weekly Tournament 5th Place,RewardsConfig.Weekly_Tournament[4],N/A,,N/A,,N/A,,N/A,,"x20 hard coin
+x1 medium
+x1 expensive",,"=20*$T$5+1*$T$11+1*$T$12",,,,,,,
+DailyTask Easy,RewardsConfig.DailyTask.easy[0],N/A,,N/A,,N/A,,N/A,,15 min unlimited lives,,"=15/60*$T$13",,,,,,,
+DailyTask Medium,RewardsConfig.DailyTask.medium[0],N/A,,N/A,,N/A,,N/A,,15 min unlimited lives,,"=15/60*$T$13",,,,,,,
+DailyTask Hard,RewardsConfig.DailyTask.hard[0],N/A,,N/A,,N/A,,N/A,,15 min unlimited lives,,"=15/60*$T$13",,,,,,,
+DailyTask Complete All,RewardsConfig.DailyTask.completeAll[0],N/A,,N/A,,N/A,,N/A,,15 min unlimited lives,,"=15/60*$T$13",,,,,,,
+DailyTask Spend Hard Easy,DailyTasks.CONFIG[SPEND_HARD].easy,N/A,,N/A,,N/A,,N/A,,"goal 280 hard
+reward x75 hard",,"=75*$T$5",,rate 1.4 applied,,,,,
+DailyTask Spend Hard,DailyTasks.CONFIG[SPEND_HARD].hard,N/A,,N/A,,N/A,,N/A,,"goal random[700-1050]
+reward 50% of goal /2",,,,rate 1.4 applied,,,,,
